@@ -1,5 +1,84 @@
 # CSC 380 — Quiz 04 Practice Guide
 
+## Start Here
+
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite.
+
+### Next scheduled assessment
+
+| Field | Value | Label |
+|-------|-------|-------|
+| Assessment | CSC 380 Quiz 04 (practice guide) | item announced (D2L Sep 18) |
+| Due date/time | **Needs verification** -- not on Gradescope as of 2026-09-24 14:03 audit | **NV -- do not invent** |
+| Coverage | Bayes' rule; law of total probability; independence; **slides pp. 43-68** | **PUBLISHED SCOPE (confirmed)** |
+| Quiz policy | 12 quizzes, 1.5% each; drop two lowest; no make-ups | confirmed (syllabus) |
+| Past format | Quiz 01 = one rubric question, one page, 1.5 points | practice recommendation only |
+
+Do **not** schedule study during class blocks (Tue/Thu through Dec 9, Arizona time):
+CSC 252 9:30-10:45 AM; CSC 335 12:30-1:45 PM; CSC 345 2:00-3:15 PM; CSC 337 3:30-4:45 PM; CSC 380 5:00-6:15 PM.
+All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026-09-24-weekly-study-order.md`.
+
+**This is an open practice guide, not a countdown.** The syllabus "quizzes every Tuesday" cadence is **not** a verified Quiz 04 due date.
+
+**Related (separate):** CSC 380 **HW03** (written) + **HW03 Code** both due **Tue Sep 29 11:59 PM**. Overlap (Bayes/independence) is real; this guide does **not** solve HW3. After nearer exams (252 Test 2 Oct 1, 337 Oct 6, 335+345 Oct 8), interleave Quiz 04 mocks.
+
+### Topics to study first (order + WHY)
+
+1. **`380-Q04-refresh` -- conditional probability** -- WHY: week-2 quiz was the weakest of the first three (words only); Bayes is just this rearranged.
+2. **`380-Q04-lotp` -- law of total probability** -- WHY: published scope; it is the Bayes denominator; slides around p.18-20 of Probability 2 short, and the 43-68 window.
+3. **`380-Q04-bayes` -- Bayes' rule + table method** -- WHY: published scope; starts at slide 43 in `26f380_probability2_short.pdf`.
+4. **`380-Q04-indep` -- independence vs mutually exclusive** -- WHY: published scope; product-rule check, not intuition.
+5. **`380-Q04-slides` -- work the examples on slides 43-68** -- WHY: that page range is the only **confirmed** coverage.
+
+**Confirmed vs schedule-based:** Scope is **confirmed**. Due datetime is **NV**. Do not build a day-before cram until Gradescope or D2L posts a due.
+
+### Day-by-day tasks (open practice; no invented due)
+
+| When | Window | Task | Guide / slides / problems | Min |
+|------|--------|------|---------------------------|-----|
+| Thu Sep 24 | After 6:15 PM only | Do **not** invent a Friday quiz. If HW03 is open, work HW03 (not this key). Optional 15-min LOTP identity. | `380-Q04-lotp`; excerpt p.19; Qmu2 | 15 |
+| Fri Sep 25 | After 345 HW2 / 252 deep | HW03 primary. Then one Bayes table. | excerpt p.47; T1 / S1 | 25 |
+| Sat Sep 26 - Mon Sep 28 | After 252 / A4 | HW03. One independence product check per day. | S2; CQ2; Quiz B (a) | 15 |
+| Tue Sep 29 | HW03 + HW03 Code due 11:59 PM. No study 5:00-6:15 | Submit both GS items. No Quiz 04 cram. | -- | HW03 |
+| Wed Sep 30 | No class | One 10-min mock (Quiz A) if HW03 is in. | Mock Quiz A | 15 |
+| After Thu Oct 1 (252 Test 2 done) | Outside class blocks | Interleave mocks B, C, D and CQ1-CQ4. | Sec 4b + 4c | 15-20 each |
+| When a due date appears on GS/D2L | 24-48 hours before that **posted** time | Light review of slides 43-68 + one mock. | `380-Q04-slides` | 30 |
+
+Tue/Thu stay light around the 5:00-6:15 class. Deep drills Mon/Wed/Fri and weekends **after** nearer exam work.
+
+### Final self-check
+
+- [ ] Mock Quizzes A-D each done in 10 minutes with at least 1.0 of 1.5
+- [ ] CQ1-CQ4 done blind, then checked
+- [ ] Three independence checks computed on both sides
+- [ ] Slides 43-68 worked (Probability 2 short)
+- [ ] **No countdown cram** until a due date is verified
+- [ ] HW03 written + Code both submitted Sep 29
+
+### Slide excerpts (personal study channel only)
+
+**Excerpt 1 -- LOTP expansion (CSC 380, Probability 2 short, page 19)**
+
+![CSC 380 Probability 2 short p.19 LOTP](excerpts/csc380-prob2-p19-lotp.png)
+
+In my own words: if the B_i partition the sample space (no overlap, nothing left out), then P(A) = sum_i P(A | B_i) P(B_i). The slide's picture is "CS major" split across class years: the total CS-major probability is each year's CS rate times that year's share. This sum is the Bayes denominator.
+
+Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc380/csc380-26f380_probability2_short.pdf` (xinchenyu / D2L Resources), page 19. Personal study channel only. Quiz 04 published window is slides **43-68**; this p.19 page is the LOTP identity those later slides reuse.
+
+**Excerpt 2 -- Bayes formula (CSC 380, Probability 2 short, page 47)**
+
+![CSC 380 Probability 2 short p.47 Bayes](excerpts/csc380-prob2-p47-bayes.png)
+
+In my own words: P(A | B) = P(A) P(B | A) / P(B). The easy derivation is the chain rule twice: P(A and B) = P(A) P(B | A) = P(B) P(A | B). The common exam mistake is swapping likelihood and posterior (saying P(disease | +) = P(+ | disease)). Always compute P(B) with LOTP first, or use the prior x likelihood table and divide by the column sum.
+
+Original deck: same PDF, page 47 (inside the published 43-68 window). Personal study channel only.
+
+Also work (no extra image): remaining examples on slides 48-53 and 43-68 of that deck; independence product checks in the long/short Probability 3 decks if you want more reps.
+
+
+---
+
+
 **Banner — PUBLISHED SCOPE; due date NEEDS VERIFICATION.**
 - **Scope is published** (D2L announcement, Sep 18, 2026): Bayes' rule, the law of total probability (LOTP), and independence, covering **slides pp. 43–68**.
 - **The due date is not verified.** Quiz 04 was not on Gradescope as of the 2026-09-24 audit (~14:03 Arizona time). The syllabus cadence ("quizzes every Tuesday unless noted") is **not** a verified due date. **Never invent a due date.** This is an open practice guide, not a countdown plan.
@@ -299,6 +378,8 @@ Factories F1 and F2 make 70% and 30% of chargers. Defect rates: 1% from F1, 4% f
 
 ---
 
+
+> **Start Here (top of this guide) is the canonical day-by-day.** The later prep table is kept as a short copy.
 ## 7. Open practice checklist (no due-date cram plan)
 
 | Mode | Action |

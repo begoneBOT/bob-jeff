@@ -1,5 +1,61 @@
 # CSC 380 — Midterm Study Guide (PROVISIONAL · LIGHT · date NV)
 
+## Start Here
+
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite. **LIGHT / date NV.**
+
+### Next scheduled assessment
+
+| Field | Value | Label |
+|-------|-------|-------|
+| Assessment | CSC 380 Midterm | item exists |
+| Date/time | Syllabus says **tentatively** Tue Oct 20, 2026, 5:00-6:15 PM in regular lecture | **date-NV** -- do not treat as fixed |
+| Format | **Not published.** Gradescope delivery unconfirmed | NV |
+| Coverage | Syllabus weeks 1-8: pandas, viz, probability, RVs, special distributions, covariance/correlation, review | **PROVISIONAL -- schedule-based** |
+| Not yet lectured | Special distributions (wk 6), covariance/correlation (wk 7), midterm review (wk 8) | study only as lectured |
+
+Do **not** schedule study during class blocks (Tue/Thu through Dec 9, Arizona time):
+CSC 252 9:30-10:45 AM; CSC 335 12:30-1:45 PM; CSC 345 2:00-3:15 PM; CSC 337 3:30-4:45 PM; CSC 380 5:00-6:15 PM.
+All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026-09-24-weekly-study-order.md`.
+
+**Do not densify** until the instructor confirms the date (re-check D2L / xinchenyu calendar during Oct 13-19). Nearer work: Quiz 04 practice (scope confirmed, due NV), HW03 Sep 29 11:59 PM, HW4 Oct 13 11:59 PM (when released). Finals horizon (not this 14-day window): Wed Dec 16 6:00-8:00 PM.
+
+### Topics to study first (order + WHY)
+
+1. **Quiz 04 published subset (`380-Q04-*`)** -- WHY: Bayes / LOTP / independence is the only **confirmed** midterm-overlapping slice; use the Quiz 04 guide.
+2. **`380-L-prob1` + `380-L-comb` -- conditional probability + combinations** -- WHY: weeks 2-3 already lectured; combinations was missing from older drafts.
+3. **`380-L-pandas` + `380-L-viz`** -- WHY: week 1; short recall, not a marathon.
+4. **`380-L-rv` then `380-L-special` / `380-L-corr`** -- WHY: weeks 4-7; add only after lecture.
+5. **Do not start** modeling / regression / classification (post-midterm).
+
+**Confirmed vs schedule-based:** Nothing about the midterm date or blueprint is confirmed. Weeks 1-8 are a syllabus timeline, not a published scope.
+
+### Day-by-day tasks (LIGHT; no class-block study)
+
+| When | Window | Task | Guide / slides / problems | Min |
+|------|--------|------|---------------------------|-----|
+| Now - Oct 1 | After HW03 / 252 Test 2 only | Quiz 04 practice. **Not** a midterm marathon. | Quiz 04 guide | see Quiz 04 |
+| Sat Oct 3 | After 337/335/345 deep blocks | One light pass over the `380-L-*` map + L1-L10. | Sec 2-4 | 35 |
+| Tue Oct 13 | HW4 due 11:59 PM (written + Code) | HW4. Then **re-verify** midterm date/scope. | D2L / https://xinchenyu.github.io/csc380/calendar/ | HW4 + 10 |
+| Oct 13-19 | Outside class blocks | Re-verify date. Densify **only if confirmed**. | -- | -- |
+| If Oct 20 is confirmed | Sit 5:00-6:15 PM. Night before: calm review only | L1-L11 + Quiz 04 fluency | 30 light |
+
+### Final self-check (light)
+
+- [ ] Weeks 1-8 concept map reviewed
+- [ ] Quiz 04 topics solid
+- [ ] L1-L11 correct
+- [ ] Date and scope re-verified during Oct 13-19 **before** densifying
+- [ ] No regression/NN early study
+- [ ] No invented Tuesday quiz dates
+
+### Slide excerpts
+
+Reuse the Quiz 04 excerpts (Probability 2 short p.19 LOTP and p.47 Bayes) under `csc380/assessments/excerpts/`. For pandas/viz, review `csc380-26f380_data1.pdf` on the harvest path -- no extra excerpt pulled (keep this guide light).
+
+---
+
+
 **Banner — date NEEDS VERIFICATION; scope PROVISIONAL; LIGHT guide.**
 - **Date:** the syllabus says **"tentatively"** Tue Oct 20, 2026, 5:00–6:15 PM Arizona time, in the regular lecture. The calendar also lists Oct 20. The date stays **Needs verification** until the instructor confirms it.
 - **Scope:** coverage is **not published**. It is provisional, from syllabus weeks 1–8: pandas, visualization, probability, random variables and distributions, covariance and correlation, and midterm review.
@@ -156,6 +212,8 @@ The Gradescope format notes show that quizzes are about 1.5 points on a single p
 
 ---
 
+
+> **Start Here (top of this guide) is the canonical day-by-day.** The later prep table is kept as a short copy.
 ## 7. Prep plan (light — no day-before cram that assumes a confirmed date)
 
 | Window | Action |

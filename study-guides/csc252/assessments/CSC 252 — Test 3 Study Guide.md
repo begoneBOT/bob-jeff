@@ -1,5 +1,68 @@
 # CSC 252 — Test 3 Study Guide (spaced / light)
 
+## Start Here
+
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite. **LIGHT / spaced.**
+
+### Next scheduled assessment
+
+| Field | Value | Label |
+|-------|-------|-------|
+| Assessment | CSC 252 Test 3 | confirmed item |
+| Date | **Thu Oct 15, 2026** | **confirmed** (homepage) |
+| When | During lecture period 9:30-10:45 AM (likely) | finer clock **NV** |
+| Length | ~25 min during lecture | Test 1 habit; not a published Test 3 cover |
+| Coverage | **not published** | **PROVISIONAL / TBD** |
+| Nearby syllabus decks | Deck 05 ALU (week of Sep 28), Deck 06 functions (week of Oct 5), Deck 07 formats (week of Oct 12) | **schedule-based preview only -- not claimed as scope** |
+
+Do **not** schedule study during class blocks (Tue/Thu through Dec 9, Arizona time):
+CSC 252 9:30-10:45 AM; CSC 335 12:30-1:45 PM; CSC 345 2:00-3:15 PM; CSC 337 3:30-4:45 PM; CSC 380 5:00-6:15 PM.
+All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026-09-24-weekly-study-order.md`.
+
+**Until Test 2 (Oct 1) is done, this guide stays light.** Nearby: Sim 3 Wed Oct 7 7:00 PM (ALU project -- no AI help). HW3 is **rule-derived** Tue Oct 13 7:00 PM (not individually posted). Asm 3 ~Wed Oct 14 (syllabus "on or about").
+
+### Topics to study first (order + WHY)
+
+1. **Official Test 3 topics (`252-T3-tbd`)** -- WHY: nothing is published; first job after each lecture from Oct 1 on is to write 2-3 bullets labeled **unverified**.
+2. **Keep-warm Test 2 skills (`252-T3-cont-binary`, `cont-mips`, `cont-gates`)** -- WHY: same skills feed Sim 3 and later tests; **not** claimed as Test 3 scope.
+3. **Optional preview Decks 05-07 (`252-T3-preview` / sec 4c)** -- WHY: those are the syllabus titles sitting in front of Oct 15. Use **only after the matching lecture**. No Sim 3 code.
+
+**Confirmed vs schedule-based:** Date confirmed. Coverage is **not confirmed**. Anything from Decks 05-07 is schedule-based review, gated on lecture.
+
+### Day-by-day tasks (LIGHT; no class-block study)
+
+| When | Window | Task | Guide / slides / problems | Min |
+|------|--------|------|---------------------------|-----|
+| Thu Sep 24 - Wed Oct 1 | After nearer Test 2 work only | Do **not** densify Test 3. Optional 10-min continuity flash. | P2 or GS-T3-L1 | 10 |
+| Thu Oct 1 after Test 2 | After 10:45 AM | Write 2-3 unverified bullets from that day's lecture (likely ALU). | `252-T3-tbd` | 15 |
+| Fri Oct 2 - Wed Oct 7 | Deep time belongs to Sim 3 (due Wed Oct 7 7:00 PM) | Almost nothing for Test 3. Optional 15-min continuity. | P3, P5 | 15 |
+| Thu Oct 8 - Sat Oct 10 | After 335/345 exams | Add lectured notes to `252-T3-tbd`; one MIPS or binary flash. | P4, P6 | 25 |
+| Sun Oct 11 | Anytime | Mixed continuity + sec 4c for **lectured** decks only. | P2-P6; PV1-PV5 only if lectured | 40 |
+| Mon Oct 12 | Anytime | Structured review of **known, lectured** material only. | All confirmed IDs | 50 |
+| Tue Oct 13 | Class day; HW3 7:00 PM if posted (rule-derived) | LIGHT only. Outside 9:30-6:15 stack. | Flash cards | 20 |
+| Wed Oct 14 | No class; Asm 3 ~7:00 PM (approximate) | Calm recall. **No cram.** | One loop + one overflow | 20 |
+| Thu Oct 15 morning | Before 9:30 AM | Buffer, then Test 3 in lecture. | -- | 10 |
+
+### Final self-check (spaced -- expand when scope is published)
+
+- [ ] Homepage / `tests/` folder re-checked for a published Test 3 scope
+- [ ] Continuity set P1-P6 done blind
+- [ ] Sec 4c used only for decks already lectured
+- [ ] No Sim 3 code or hints taken from this guide
+- [ ] Sleep the night of Oct 14
+
+### Slide excerpts
+
+Decks 05-07 were **not** on the box harvest. After those lectures, review the live decks:
+- Deck 05 The ALU -- `https://lecturer-russ.appspot.com/classes/cs252/fall26/slides/05_the_ALU.pdf`
+- Deck 06 MIPS Functions -- `.../06_MIPS_functions.pdf`
+- Deck 07 Instruction Formats -- `.../07_instructionFormats_and_CPU_details.pdf`
+
+For keep-warm binary/gates, reuse the Test 2 excerpts (Deck 01 p.41 invert-add-1; Deck 03 p.35 full adder) in `csc252/assessments/excerpts/`.
+
+---
+
+
 **Banner — scope PROVISIONAL / LIGHT.** Test 3 scope is **not published**. The **date is confirmed**: Thu Oct 15, 2026, during lecture, 25 minutes. The syllabus lectures just before Test 3 are Deck 05 (The ALU), Deck 06 (MIPS Functions), and Deck 07 (Instruction Formats and CPU Details). The course site does **not** assign those decks to any test, so this guide does **not** claim them as scope. Until coverage is published, this guide keeps Decks 01–04 skills warm and offers an **optional, clearly labelled preview** (§4c) to use only after lecture covers those topics.
 
 
@@ -174,6 +237,8 @@ add  $t0, $t0, $t1
 
 ---
 
+
+> **Start Here (top of this guide) is the canonical day-by-day.** The later prep table is kept as a short copy.
 ## 7. Day-by-day (spaced; no day-before cram)
 
 Weekdays checked against the 2026 calendar.

@@ -1,5 +1,90 @@
 # CSC 345 — Exam 1 Study Guide
 
+## Start Here
+
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite.
+
+### Next scheduled assessment
+
+| Field | Value | Label |
+|-------|-------|-------|
+| Assessment | CSC 345 Exam 1 | confirmed item |
+| Date | **Thu Oct 8, 2026** | **confirmed** (professorlynam syllabus schedule) |
+| Time | All-day calendar; class meets 2:00-3:15 PM | clock **NV** |
+| Format | In person (syllabus); Gradescope role unknown | format **NV** |
+| Coverage | Topics 1-3 (Review DS; Algorithm Analysis; Graphs) | **PROVISIONAL -- schedule-based review** |
+| Topic 3 depth | Weeks 5-6 (week 6 = Sep 29-Oct 1). Slides include Dijkstra, MCST, topo sort | **how far lecture gets before Oct 8 is unverified** |
+| Topic 4 | Internal Sort -- slides **not linked** | **excluded** |
+| Same day | CSC 335 Midterm 12:30-1:45 same room | plan energy |
+
+Do **not** schedule study during class blocks (Tue/Thu through Dec 9, Arizona time):
+CSC 252 9:30-10:45 AM; CSC 335 12:30-1:45 PM; CSC 345 2:00-3:15 PM; CSC 337 3:30-4:45 PM; CSC 380 5:00-6:15 PM.
+All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026-09-24-weekly-study-order.md`.
+
+**Tonight / late window:** CSC 345 **HW2** primary due was **Thu Sep 24 2:00 PM**. Tracker still showed No Submission at 14:03. **Late window through Sat Sep 26 2:00 PM.** That outranks Exam 1 study until it is submitted. PP2 due Tue Oct 13 2:00 PM (after the exam) -- this guide has hand traces only, no project code.
+
+### Topics to study first (order + WHY)
+
+1. **Submit HW2 if still open (through Sat Sep 26 2:00 PM)** -- WHY: nearest graded deadline.
+2. **`345-E1-t2-asym` + `345-E1-t2-rec` -- Big-O witnesses + Master Theorem** -- WHY: HW1 score signal was incomplete proofs; Quiz 1 signal was definitions; Topic 2 is already lectured.
+3. **`345-E1-t3-basics` + `345-E1-t3-search` -- graphs, BFS, DFS** -- WHY: current lecture weeks 5-6; high-trace value.
+4. **`345-E1-t3-paths` then `t3-mcst-topo`** -- WHY: in the Topic 3 slides; study Dijkstra now; MCST/topo **only as far as lectured**.
+5. **`345-E1-t1-*` lists / storage / recursion** -- WHY: Topic 1 already lectured; keep warm after Topic 2/3.
+
+**Confirmed vs schedule-based:** Date confirmed. Topics 1-3 are **provisional from lectures so far**, not a published exam blueprint. Topic 4 is excluded.
+
+### Day-by-day tasks (minutes; no class-block study)
+
+| When | Window | Task | Guide / slides / problems | Min |
+|------|--------|------|---------------------------|-----|
+| Thu Sep 24 | After 6:15 PM (345 class 2:00-3:15 already past) | **HW2 late-window** if not submitted. Exam study only if HW2 is in. | HW2 on Gradescope | HW2 |
+| Fri Sep 25 | Anytime | HW2 finish first. Then Topic 1 lists/storage/recursion. | `t1-*`; P1-P3; TR5 | 50 after HW2 |
+| Sat Sep 26 | **HW2 late cutoff 2:00 PM** | After 2:00: Topic 2 counting + Big-O witnesses. | `t2-count`, `t2-asym`; P4; PR1, Q3 | 70 |
+| Sun Sep 27 | After 252 deep time | Topic 2 Master Theorem. | `t2-rec`; excerpt Topic 2 p.68; P5; TR1 | 45 |
+| Mon Sep 28 - Thu Oct 1 | 252 Test 2 outranks | Optional 15-min proof flash only. | PR2 one pass | 15 |
+| Fri Oct 2 | Anytime | Topic 3 basics + BFS/DFS. | `t3-basics`, `t3-search`; P7-P10; TR3 | 80 |
+| Sat Oct 3 | Anytime | Dijkstra; MCST/topo **if lectured**. | `t3-paths`; excerpt Topic 3 p.40; TR4; TR6 only if lectured | 70 |
+| Sun Oct 4 | Light -- 337 mock is today | One proof rewrite. | PR1 or PR3 | 25 |
+| Mon Oct 5 | Anytime | **Timed mock:** Q1-Q8 in 15 min, then PR1-PR3 + TR1-TR4 in 45 min. | Sec 4b | 75 |
+| Tue Oct 6 | 337 midterm today -- 345 optional after 4:45 PM | Light flash. | Q5, Q8 | 15 |
+| Wed Oct 7 | No class | Light mixed. **No cram.** | All 10 IDs, light | 35 |
+| Thu Oct 8 morning | Before 2:00 PM (and after 335 midterm) | Calm buffer. Exam clock NV. | -- | 10 |
+
+### Final self-check
+
+- [ ] HW2 submitted (late window Sat Sep 26 2:00 PM if needed)
+- [ ] Blind pass over all 10 IDs
+- [ ] Four-part proof habit written three times (statement, witnesses, inequality, conclusion)
+- [ ] BFS / DFS / Dijkstra traces redrawn
+- [ ] MCST/topo only if lectured
+- [ ] Topic 4 still excluded
+- [ ] Wednesday light -- no night-before cram
+- [ ] Energy after the 335 midterm the same day
+
+### Slide excerpts (personal study channel only)
+
+**Excerpt 1 -- Master Theorem cases (CSC 345, Topic 2, page 68)**
+
+![CSC 345 Topic 2 p.68 Master Theorem](excerpts/csc345-topic2-p68-master.png)
+
+In my own words: for T(n) = a T(n/b) + c n^d, compare a to b^d. If a < b^d the work outside the recursion wins (Theta(n^d)). If a = b^d the logs appear (Theta(n^d log n)). If a > b^d the recursion tree wins (Theta(n^(log_b a))). The slide's running example T(n) = 2 T(n/2) + n has a=2, b=2, d=1 so a = b^d and T(n) is Theta(n log n). The Master Theorem does not "solve" the recurrence for a closed form -- it names the growth class. Do not apply it to T(n-1) forms (use unrolling + induction, PR3).
+
+Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc345/csc345-topic2-slides.pdf` (public: https://professorlynam.github.io/csc345/Topic%202%20Slides.pdf), page 68. Personal study channel only.
+
+**Excerpt 2 -- Dijkstra loop (CSC 345, Topic 3, page 40)**
+
+![CSC 345 Topic 3 p.40 Dijkstra](excerpts/csc345-topic3-p40-dijkstra.png)
+
+In my own words: start with dist(source)=0 and everyone else infinite. Known begins as {{source}}; Fringe is the source's neighbors. Each round, finalize the Fringe vertex f with the smallest d(source,f), move it to Known, add newly reached vertices to Fringe, and relax: if you found a cheaper path through a Known vertex t, set d(source,f) = d(source,t) + w(t,f). Do not change a vertex after it is Known. Fails if any weight is negative.
+
+Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc345/csc345-topic3-slides.pdf` (public: https://professorlynam.github.io/csc345/Topic%203%20Slides.pdf), page 40. Personal study channel only.
+
+Also review: Topic 1 slides (lists / orthogonal lists / recursion) `csc345-topic1-slides.pdf`. Topic 4 is not linked -- skip.
+
+
+---
+
+
 **Banner — scope PROVISIONAL: Topics 1–3.** The exam scope is **not published**. Practice covers the lectures so far:
 - **Topic 1, Review:** lists, stacks, queues, linked lists, orthogonal lists, array storage, recursion.
 - **Topic 2, Algorithm Analysis:** step-counting, profiling, asymptotic notation, recurrences.
@@ -330,6 +415,8 @@ for i = 1 to n
 
 ---
 
+
+> **Start Here (top of this guide) is the canonical day-by-day.** The later prep table is kept as a short copy.
 ## 7. Day-by-day prep
 
 | Day | Focus | IDs |

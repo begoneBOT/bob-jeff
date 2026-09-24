@@ -1,5 +1,81 @@
 # CSC 335 — Midterm Study Guide
 
+## Start Here
+
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite.
+
+### Next scheduled assessment
+
+| Field | Value | Label |
+|-------|-------|-------|
+| Assessment | CSC 335 Midterm Exam | confirmed item |
+| Date | **Thu Oct 8, 2026** | **confirmed** (D2L / syllabus); closed-book in-class per D2L lessons note |
+| Time | Class period 12:30-1:45 PM is the meeting; exact start **TBD** | clock **NV** |
+| Format / materials | Closed-book stated on tracker; length **not** in inventory | **verify** in class / D2L |
+| Coverage | Decks on box (Intro, OOP, Classes 1-2, Testing & Javadoc) plus syllabus weeks 1-6 | **PROVISIONAL -- schedule-based review** |
+| Same day | CSC 345 Exam 1 is also Oct 8 (Commons 305 at 2:00 PM class) | plan energy; both clocks NV beyond class periods |
+
+Do **not** schedule study during class blocks (Tue/Thu through Dec 9, Arizona time):
+CSC 252 9:30-10:45 AM; CSC 335 12:30-1:45 PM; CSC 345 2:00-3:15 PM; CSC 337 3:30-4:45 PM; CSC 380 5:00-6:15 PM.
+All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026-09-24-weekly-study-order.md`.
+
+**Do not invent pop quizzes.** Quiz 1 window ended **Thu Sep 24 12:30** (past). P3 is syllabus-listed but **not** in D2L Assignments -- **NV**, no study time planned around it.
+
+### Topics to study first (order + WHY)
+
+1. **`335-M-oop` + `335-M-classes1` -- encapsulation, UML, composition** -- WHY: on-box decks exist; UML is high-yield and easy to lose; week-1 material that later patterns sit on.
+2. **`335-M-testing` + `335-M-classes2` -- JUnit, Javadoc, static vs instance, exceptions** -- WHY: on-box decks; week 2-3 already lectured; tracing (T1-T4) targets these.
+3. **`335-M-lambdas` + `335-M-generics`** -- WHY: syllabus weeks 3-4; **[Syllabus-only]** -- no deck on box; match lecture notation.
+4. **`335-M-collections` + `335-M-javafx-obs`** -- WHY: syllabus weeks 5-6 (week 6 is Sep 29-Oct 1 -- JavaFX/Observer/Composite **as lectured**). Week 7 is review only.
+5. After those: `335-M-intro` for motivation vocabulary.
+
+**Confirmed vs schedule-based:** Date confirmed. Scope is **not published**. Rows tagged [Deck] are harvested lecture content. Rows tagged [Syllabus-only] are schedule-based review.
+
+### Day-by-day tasks (minutes; no class-block study)
+
+Prefer Mon/Wed/Fri and weekends. Split with 345 Exam 1. After Oct 1, 337 Midterm 1 (Oct 6) outranks 335 until Tuesday evening.
+
+| When | Window | Task | Guide / slides / problems | Min |
+|------|--------|------|---------------------------|-----|
+| Thu Sep 24 evening | After 6:15 PM only | Optional 15-min UML flash if 345 HW2 is already in. | `335-M-classes1`; excerpt Classes-part1 p.2 | 15 |
+| Fri Sep 25 | After 345 HW2 late-window work | Intro + OOP + Classes 1. | `335-M-intro`, `oop`, `classes1`; P1-P3 | 45 |
+| Sat Sep 26 | After 2:00 PM (345 HW2 late cutoff) | Testing + Classes 2. | `335-M-testing`, `classes2`; P4-P8; T1, T3 | 60 |
+| Sun Sep 27 | Light -- 252 Test 2 still nearer | Lambdas only if 252 mock is done. | `335-M-lambdas`; W2 | 25 |
+| Mon Sep 28 - Wed Oct 1 | After 252 Test 2 prep | Do **not** steal 252 deep time. Optional 15-min 335 flash. | S3 exceptions | 15 |
+| Fri Oct 2 | Anytime | Intro/OOP/Classes 1 redraw + UML. | excerpt p.2; P3; W1 | 70 |
+| Sat Oct 3 | Anytime | Testing, Classes 2, lambdas. | T1-T4; P4; W2 | 80 |
+| Sun Oct 4 | Anytime | Generics, collections, patterns, JavaFX **as lectured**. | `generics`, `collections`, `javafx-obs`; S1, S2, W3 | 80 |
+| Mon Oct 5 | Anytime | **50-minute paper mock** (T1-T4, W1-W3, S1-S4), then retake misses. | Sec 4b | 70 |
+| Tue Oct 6 | 337 midterm today -- 335 is optional light after 4:45 PM | Flash only. | S1 + T2 | 15 |
+| Wed Oct 7 | No class | Light mixed review. **No cram.** Sim 3 is 252's job tonight. | All IDs, light | 35 |
+| Thu Oct 8 morning | Before 12:30 PM only | Calm buffer. Midterm in the 335 period (clock NV). | -- | 10 |
+
+### Final self-check
+
+- [ ] Blind pass over all nine section IDs
+- [ ] One UML composition sketch redrawn from memory
+- [ ] Three JUnit tests written (normal / edge / error)
+- [ ] 50-minute mock done
+- [ ] Syllabus-only topics matched to **actual lecture notation**
+- [ ] P3 still treated as NV
+- [ ] Energy reserved for 345 Exam 1 the same afternoon
+
+### Slide excerpts (personal study channel only)
+
+**Excerpt -- UML class-box vocabulary (CSC 335, Classes part 1, PDF page 2)**
+
+![CSC 335 Classes part 1 p.2 UML](excerpts/csc335-classes1-p2-uml.png)
+
+In my own words: a UML class box is name / fields / methods. Visibility marks are `-` private, `+` public, `#` protected. A field can also show type, multiplicity, and a default. Class diagrams show how types relate; sequence diagrams show calls over time. When you sketch `Library` composed of `Book`s, put the filled diamond on the `Library` (whole) end -- that is composition ("has-a"), not inheritance (hollow triangle).
+
+Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc335/csc335-classes-part1.pdf` (D2L Slides; header may show 2025 -- FA26 topic practice only), page 2. Personal study channel only.
+
+Also review (no extra image): `csc335-oop.pdf`, `csc335-classes-part2.pdf`, `csc335-testing-and-javadoc.pdf` in the same harvest folder. JavaFX / generics / collections are syllabus-only until a deck appears.
+
+
+---
+
+
 **Banner — scope PROVISIONAL.** Midterm scope is **not published**. Practice covers the lectures so far plus the syllabus weeks 1–6 topics. The **date is set**: Thu Oct 8, 2026, in the class period; the clock time is TBD beyond "class period".
 
 **No Gradescope.** CSC 335 is D2L-primary, and the Classroom50 FA26 page returns 404. **No Gradescope format is used or invented here.** On-box decks may show **2025** headers; they are used for FA26 topic practice only.
@@ -372,6 +448,8 @@ public static <T extends Comparable<T>> T max(List<T> xs) {
 
 ---
 
+
+> **Start Here (top of this guide) is the canonical day-by-day.** The later prep table is kept as a short copy.
 ## 7. Day-by-day prep
 
 The same day as CSC 345 Exam 1, so split effort. Prefer Mon/Wed/Fri and weekends for 335.

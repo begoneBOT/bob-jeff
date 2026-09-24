@@ -1,5 +1,87 @@
 # CSC 337 — Midterm 1 Study Guide
 
+## Start Here
+
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite.
+
+### Next scheduled assessment
+
+| Field | Value | Label |
+|-------|-------|-------|
+| Assessment | CSC 337 Midterm 1 | confirmed item |
+| Date | **Tue Oct 6, 2026** | **confirmed** (D2L syllabus / Midterms calendar) |
+| When | 75 minutes; class period **3:30-4:45 PM if held in class** | date confirmed; in-class clock from syllabus description |
+| Delivery / materials | Closed-book **not** in inventory | **verify** |
+| Coverage | Syllabus weeks 1-7: intro, HTML/CSS, forms, Get & Post, JS, DOM, client/server | **PROVISIONAL -- schedule-based review** |
+| Do not invent | Node, Express, MongoDB, D3 | those are weeks 8+ |
+
+Do **not** schedule study during class blocks (Tue/Thu through Dec 9, Arizona time):
+CSC 252 9:30-10:45 AM; CSC 335 12:30-1:45 PM; CSC 345 2:00-3:15 PM; CSC 337 3:30-4:45 PM; CSC 380 5:00-6:15 PM.
+All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026-09-24-weekly-study-order.md`.
+
+**Nearby deadline (outranks midterm study until it is in):** CSC 337 **Assignment 4** due **Tue Sep 29 3:30 PM** (Gradescope / tracker). A4 topics: HTML/CSS/JS form validation, sorting, word-frequency, number-guessing. This guide does **not** contain A4 solutions. DOM (week 6, Sep 28-Oct 1) and client/server (week 7, Oct 5-8 -- midterm week) may **not** be lectured yet.
+
+### Topics to study first (order + WHY)
+
+1. **Finish A4 first (until Tue Sep 29 3:30 PM)** -- WHY: hard deadline before any midterm deep-dive; skills overlap (forms, JS, sort, counts) but A4 is individual submitted work.
+2. **`337-M1-http` + `337-M1-getpost`** -- WHY: week 1 + week 4; GET vs POST is easy points; slides `02-Browsers-URL-HTTP` and `06-HTML-Forms`.
+3. **`337-M1-html` + `337-M1-css` + `337-M1-layout`** -- WHY: weeks 2 content; box model and specificity are high-miss; slides 03-05.
+4. **`337-M1-forms` + `337-M1-js`** -- WHY: weeks 3 and 5; already lectured; A4 overlap without copying A4.
+5. **`337-M1-dom` then `337-M1-client-server`** -- WHY: weeks 6-7; study **only after lecture**. Client/server is conceptual only.
+6. **`337-M1-integrate`** -- last, after the mock.
+
+**Confirmed vs schedule-based:** Date and 75-min length confirmed. Scope is **not published**. Slides 02-08 are harvested lecture content. DOM / client-server remain schedule-based until taught.
+
+### Day-by-day tasks (minutes; no class-block study)
+
+| When | Window | Task | Guide / slides / problems | Min |
+|------|--------|------|---------------------------|-----|
+| Thu Sep 24 | After 6:15 PM only (do **not** study 3:30-4:45) | A4 work, not midterm. Optional 10-min GET vs POST if A4 is already in. | A4 files; `337-M1-getpost` table | 10 midterm / rest A4 |
+| Fri Sep 25 | Anytime | A4 primary. If stuck, 20-min CSS specificity tuples. | Slides 04; P4; GS-337-R1 | 20 + A4 |
+| Sat Sep 26 | Anytime | A4 primary. | -- | A4 |
+| Sun Sep 27 | Anytime | A4 primary; 25-min JS traps if A4 is nearly done. | `337-M1-js`; T1, T3; P8 | 25 + A4 |
+| Mon Sep 28 | Anytime | A4 polish. After A4: HTTP + Get/Post. | `337-M1-http`, `getpost`; P2, P7, R3, R4 | 40 after A4 |
+| Tue Sep 29 | **A4 due 3:30 PM -- submit before class.** No study 9:30-6:15 stack except the A4 hand-in | After 6:15: LIGHT HTTP flash only. | R3, R4 | 15 |
+| Wed Sep 30 | No class | HTTP, URLs, Get & Post. | Slides 02 + 06; ICA-M1; P7 | 50 |
+| Thu Oct 1 | After 252 Test 2 (after 10:45) and outside remaining class blocks | Start HTML/CSS review. | `html`, `css`, `layout`; excerpt layout p.3; P3-P5; ICA-M5 | 50 |
+| Fri Oct 2 | Anytime | Deep HTML + CSS + layout. | Slides 03-05; R1; ICA-M2, M4 | 80 |
+| Sat Oct 3 | Anytime | Forms, JS, and DOM **if week-6 lecture happened**. | `forms`, `js`, `dom`; W1; ICA-M6, M8 | 80 |
+| Sun Oct 4 | Anytime | **45-minute paper mock** (R1-R4, T1-T4, W1-W2), then review. | Sec 4b | 70 |
+| Mon Oct 5 | Anytime; stop by evening | Even rotation; client/server concepts only. | All `337-M1-*`; P9, E1 | 70 |
+| Tue Oct 6 | Before 3:30 PM: calm buffer only. Midterm 3:30-4:45 if in class | No new topics. | -- | 10 |
+
+### Final self-check
+
+- [ ] A4 submitted (Sep 29 3:30 PM) -- process, not content
+- [ ] Blind pass over all 11 section IDs
+- [ ] 45-minute paper mock done
+- [ ] Specificity tuples and content-box vs border-box from memory
+- [ ] GET vs POST differences without notes
+- [ ] DOM / client-server studied only as lectured
+- [ ] No Node/Mongo invented
+- [ ] Light Monday night -- no cram
+
+### Slide excerpts (personal study channel only)
+
+**Excerpt -- margin vs padding (CSC 337, CSS Layout, page 3)**
+
+![CSC 337 CSS Layout p.3 margin and padding](excerpts/csc337-css-layout-p3-box.png)
+
+In my own words: `width` in the default content-box model is the content only. This rule sets content 70px, padding 50px on every side, and margin 10px on every side, plus a 2px border. Total rendered width = 70 + 2*50 + 2*2 = 174px, then the 10px margins sit outside that. Under `box-sizing: border-box`, the 70px would already include padding and border, so the content would shrink.
+
+Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc337/content-05-CSS-Layout.pdf` (D2L slide `05-CSS-Layout`), page 3. Personal study channel only.
+
+Also review (no extra image -- point to exact decks):
+- `content-02-Browsers-URL-HTTP.pdf` -- URL parts + status codes
+- `content-04-CSS.pdf` -- class vs id (ICA-M4 grain)
+- `content-06-HTML-Forms.pdf` -- GET vs POST + label/for pairing
+- `content-07-Javascript.pdf` -- events, `===`, default `sort`
+- `content-08-html-css-js-site.pdf` -- integration
+
+
+---
+
+
 **Banner — scope PROVISIONAL.** Midterm 1 scope is **not published**. Practice covers the lectures so far, following the syllabus weeks 1–7: Introduction, HTML & CSS, HTML forms, Get & Post, JavaScript, DOM, and the client/server model. The **date is confirmed**: Tue Oct 6, 2026, 75 minutes, in the class period. Do **not** invent Node, Express, MongoDB, or D3 detail; those are weeks 8+.
 
 Canonical maps: `csc337-topic-map.md` · `announced-assessments-inventory-2026-09-24.md`
@@ -423,6 +505,8 @@ A loop that checks `s.length === 5` and that every character is between `'0'` an
 
 ---
 
+
+> **Start Here (top of this guide) is the canonical day-by-day.** The later prep table is kept as a short copy.
 ## 7. Day-by-day prep (Tue/Thu light; no day-before cram)
 
 | Day | Focus | IDs | Notes |
