@@ -1,5 +1,6 @@
-"""Render study-calendar-2026-09-24-to-10-08.png from the weekly study order.
+"""Render study-calendar-2026-09-24-to-10-08.png: cross-course PDF switch order by day.
 
+Cells list which class / guide PDF to open next (switch order), not topics inside a course.
 Source of truth: weekly-study-order (Thu Sep 24 -> Thu Oct 8, FA26, America/Phoenix).
 Usage: python3 make_study_calendar.py [output.png]
 """
@@ -14,7 +15,6 @@ FONT_B = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 BG = "#0d0f14"
 CELL = "#1b1f29"
-CELL_CLASS = "#1b1f29"
 CELL_OFF = "#12141a"
 GRID = "#3a4152"
 WHITE = "#ffffff"
@@ -33,40 +33,61 @@ COURSE = {
 START = date(2026, 9, 24)
 END = date(2026, 10, 8)
 
-# Per day: list of (kind, label). kind: exam | due | flag | core | opt
-# Labels are short names only; see weekly-study-order.md for detail.
+# (number, name, when) for the banner, soonest first.
+PDF_ORDER = [
+    (1, "345 HW2 \u2192 345 Exam1", "late \u2264 Sat 9/26 2p"),
+    (2, "337 A4 \u2192 337 MT1", "A4 Tue 9/29 3:30p"),
+    (3, "252 HW2 \u00b7 380 HW03", "Tue 9/29 \u2192 then 252 Test2 / 380 Quiz04"),
+    (4, "252 Test2", "Thu 10/1"),
+    (5, "337 MT1", "Tue 10/6"),
+    (6, "335 MT \u2192 345 Exam1", "both Thu 10/8"),
+    (7, "380 Quiz04", "due NV \u00b7 in gaps"),
+    (8, "252 Test3 \u00b7 380 MT", "10/15 \u00b7 ~10/20 NV \u00b7 LIGHT"),
+]
+
+# Per day: switch order of class/PDF short names. Prefix "*" = exam that day, "~" = light.
 PLAN = {
-    date(2026, 9, 24): [("flag", "345 HW2 LATE open"), ("core", "345 HW2"), ("opt", "252 binary")],
-    date(2026, 9, 25): [("core", "345 HW2"), ("core", "252 2's comp"), ("core", "337 A4")],
-    date(2026, 9, 26): [("due", "345 HW2 2p"), ("core", "252 MIPS"), ("core", "345 proofs"), ("core", "337 A4")],
-    date(2026, 9, 27): [("core", "252 retake"), ("core", "337 A4"), ("core", "252 HW2 draft"), ("core", "380 HW03 draft")],
-    date(2026, 9, 28): [("due", "SUBMIT 337 A4"), ("due", "SUBMIT 252 HW2"), ("core", "252 Test2 mock"), ("core", "380 HW03")],
-    date(2026, 9, 29): [("due", "337 A4 3:30p"), ("due", "252 HW2 7p"), ("due", "380 HW03 11:59p"), ("opt", "252 flash")],
-    date(2026, 9, 30): [("due", "252 Asm2 5p"), ("core", "252 recall"), ("core", "337 HTTP"), ("opt", "380 Q4 Bayes")],
-    date(2026, 10, 1): [("exam", "252 TEST 2"), ("core", "337 HTML/CSS"), ("core", "252 Sim3 start")],
-    date(2026, 10, 2): [("core", "337 HTML/CSS"), ("core", "335 OOP/UML"), ("core", "345 BFS/DFS"), ("opt", "252 Sim3")],
-    date(2026, 10, 3): [("core", "337 JS/DOM"), ("core", "335 lambdas"), ("core", "345 Dijkstra"), ("opt", "252 Sim3")],
-    date(2026, 10, 4): [("core", "337 mock"), ("core", "335 generics"), ("core", "345 proofs"), ("opt", "252 Sim3")],
-    date(2026, 10, 5): [("core", "337 misses"), ("core", "335 mock"), ("core", "345 mock")],
-    date(2026, 10, 6): [("exam", "337 MIDTERM 1"), ("due", "SUBMIT 252 Sim3"), ("opt", "335/345 flash")],
-    date(2026, 10, 7): [("due", "252 Sim3 7p"), ("core", "335 light"), ("core", "345 light")],
-    date(2026, 10, 8): [("exam", "335 MIDTERM"), ("exam", "345 EXAM 1"), ("opt", "calm only")],
+    date(2026, 9, 24): ["345 HW2", "252 Test2"],
+    date(2026, 9, 25): ["345 HW2", "252 Test2", "380 Quiz04"],
+    date(2026, 9, 26): ["345 HW2", "337 A4", "252 Test2"],
+    date(2026, 9, 27): ["337 A4", "252 HW2", "380 HW03"],
+    date(2026, 9, 28): ["252 Test2", "337 A4", "252 HW2"],
+    date(2026, 9, 29): ["380 HW03", "~252 Test2"],
+    date(2026, 9, 30): ["252 Test2", "337 MT1", "380 Quiz04"],
+    date(2026, 10, 1): ["*252 Test2", "337 MT1"],
+    date(2026, 10, 2): ["337 MT1", "335 MT", "345 Exam1"],
+    date(2026, 10, 3): ["337 MT1", "335 MT", "345 Exam1"],
+    date(2026, 10, 4): ["337 MT1", "335 MT", "345 Exam1"],
+    date(2026, 10, 5): ["337 MT1", "335 MT", "345 Exam1"],
+    date(2026, 10, 6): ["*337 MT1", "~335 MT", "~345 Exam1"],
+    date(2026, 10, 7): ["~335 MT", "~345 Exam1"],
+    date(2026, 10, 8): ["*335 MT", "*345 Exam1"],
+}
+
+DUE = {
+    date(2026, 9, 26): ["345 HW2 late 2p"],
+    date(2026, 9, 28): ["submit A4 + 252 HW2"],
+    date(2026, 9, 29): ["337 A4 3:30p", "252 HW2 7p", "380 HW03 11:59p"],
+    date(2026, 9, 30): ["252 Asm2 5p"],
+    date(2026, 10, 7): ["252 Sim3 7p"],
 }
 
 AFTER = {
-    date(2026, 10, 9): [("opt", "380 MT light")],
-    date(2026, 10, 10): [("opt", "Oct 13 stack")],
+    date(2026, 10, 9): ["~380 MT"],
+    date(2026, 10, 10): ["~252 Test3"],
 }
 
-W, H = 2240, 1720
+W, H = 2240, 2080
 COLS = 7
 MARGIN = 36
-HEADER_H = 190
+BANNER_Y = 180
+BANNER_H = 330
 DOW_H = 50
-FOOTER_H = 250
+FOOTER_H = 190
 CELL_W = (W - 2 * MARGIN) // COLS
 ROWS = 3
-CELL_H = (H - HEADER_H - DOW_H - FOOTER_H - MARGIN) // ROWS
+TOP = BANNER_Y + BANNER_H + DOW_H
+CELL_H = (H - TOP - FOOTER_H) // ROWS
 
 
 def font(size, bold=False):
@@ -83,109 +104,134 @@ def fit_font(draw, text, max_w, start, bold=True, min_size=16):
     return font(min_size, bold)
 
 
-def chip_style(kind, label):
-    course = COURSE.get(label.split()[0]) if label[:3].isdigit() else None
-    if kind == "exam":
-        return EXAM, WHITE, None
-    if kind in ("due", "flag"):
-        return RED, WHITE, None
-    if kind == "core":
-        return course or MUTED, "#000000", None
-    return None, course or MUTED, course or MUTED
+def color_of(name):
+    return COURSE.get(name[:3], MUTED)
 
 
-def draw_chip(draw, x, y, w, kind, label, h=54):
-    fill, fg, outline = chip_style(kind, label)
-    text = label
-    if kind == "exam":
-        text = "\u2605 " + label
-    elif kind == "due" and not label.startswith("SUBMIT"):
-        text = "DUE " + label
-    elif kind == "due":
-        text = label.replace("SUBMIT", "SUBMIT\u2192", 1)
-    if fill:
-        draw.rounded_rectangle([x, y, x + w, y + h], radius=10, fill=fill)
+def draw_step(d, x, y, w, n, raw, h=56):
+    exam = raw.startswith("*")
+    light = raw.startswith("~")
+    name = raw.lstrip("*~")
+    col = color_of(name)
+    d.ellipse([x, y + h / 2 - 17, x + 34, y + h / 2 + 17], fill=WHITE)
+    d.text((x + 17, y + h / 2), str(n), font=font(22, True), fill="#000000", anchor="mm")
+    cx = x + 44
+    cw = w - 44
+    if exam:
+        d.rounded_rectangle([cx, y, cx + cw, y + h], radius=10, fill=EXAM)
+        text, fg = "\u2605 " + name, WHITE
+    elif light:
+        d.rounded_rectangle([cx, y, cx + cw, y + h], radius=10, outline=col, width=3)
+        text, fg = name, col
     else:
-        draw.rounded_rectangle([x, y, x + w, y + h], radius=10, outline=outline, width=3)
-    f = fit_font(draw, text, w - 22, 31, bold=True, min_size=20)
-    draw.text((x + 12, y + h / 2), text, font=f, fill=fg, anchor="lm")
+        d.rounded_rectangle([cx, y, cx + cw, y + h], radius=10, fill=col)
+        text, fg = name, "#000000"
+    d.text((cx + 12, y + h / 2), text, font=fit_font(d, text, cw - 22, 32, min_size=20), fill=fg, anchor="lm")
     return h
+
+
+def draw_banner(d):
+    d.rounded_rectangle([MARGIN, BANNER_Y, W - MARGIN, BANNER_Y + BANNER_H - 16], radius=16,
+                        fill="#161a23", outline=WHITE, width=3)
+    d.text((MARGIN + 24, BANNER_Y + 18), "PDF switch order (open these guides in this order)",
+           font=font(36, True), fill=WHITE)
+    col_w = (W - 2 * MARGIN - 48) // 4
+    box_h = 112
+    for i, (n, name, when) in enumerate(PDF_ORDER):
+        r, c = divmod(i, 4)
+        x = MARGIN + 24 + c * col_w
+        y = BANNER_Y + 76 + r * (box_h + 12)
+        col = color_of(name)
+        d.rounded_rectangle([x, y, x + col_w - 14, y + box_h], radius=12, fill=CELL, outline=col, width=4)
+        d.ellipse([x + 12, y + 14, x + 52, y + 54], fill=WHITE)
+        d.text((x + 32, y + 34), str(n), font=font(26, True), fill="#000000", anchor="mm")
+        d.text((x + 64, y + 34), name, font=fit_font(d, name, col_w - 92, 30), fill=col, anchor="lm")
+        d.text((x + 16, y + 84), when, font=fit_font(d, when, col_w - 44, 26, bold=False), fill=WHITE, anchor="lm")
 
 
 def main(out):
     img = Image.new("RGB", (W, H), BG)
     d = ImageDraw.Draw(img)
 
-    d.text((MARGIN, 30), "Arshia Nasr \u00b7 FA26 Study Calendar", font=font(56, True), fill=WHITE)
-    d.text((MARGIN, 100), "Thu Sep 24 \u2192 Thu Oct 8, 2026  \u00b7  Arizona time (America/Phoenix)",
-           font=font(30), fill=MUTED)
+    d.text((MARGIN, 26), "Arshia Nasr \u00b7 FA26 \u00b7 What to open next", font=font(54, True), fill=WHITE)
+    d.text((MARGIN, 94), "Thu Sep 24 \u2192 Thu Oct 8, 2026  \u00b7  Arizona time  \u00b7  1\u21922\u21923 = switch order that day",
+           font=font(29), fill=MUTED)
     blocks = "Tue/Thu class blocks (no study): 252 9:30\u201310:45 \u00b7 335 12:30\u20131:45 \u00b7 345 2:00\u20133:15 \u00b7 337 3:30\u20134:45 \u00b7 380 5:00\u20136:15"
-    d.text((MARGIN, 145), blocks, font=fit_font(d, blocks, W - 2 * MARGIN, 26, bold=False), fill=WHITE)
+    d.text((MARGIN, 136), blocks, font=fit_font(d, blocks, W - 2 * MARGIN, 26, bold=False), fill=WHITE)
 
-    y0 = HEADER_H
+    draw_banner(d)
+
+    y0 = BANNER_Y + BANNER_H
     for i, name in enumerate(["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]):
         x = MARGIN + i * CELL_W
         d.text((x + CELL_W / 2, y0 + DOW_H / 2), name, font=font(28, True),
                fill=WHITE if name in ("TUE", "THU") else MUTED, anchor="mm")
 
     grid_start = date(2026, 9, 20)
-    top = y0 + DOW_H
     for r in range(ROWS):
         for c in range(COLS):
             day = grid_start + timedelta(days=r * 7 + c)
             x = MARGIN + c * CELL_W
-            y = top + r * CELL_H
+            y = TOP + r * CELL_H
             in_window = START <= day <= END
-            class_day = day.weekday() in (1, 3)
-            box = [x + 4, y + 4, x + CELL_W - 4, y + CELL_H - 4]
-            d.rounded_rectangle(box, radius=14, fill=CELL if in_window else CELL_OFF,
+            class_day = in_window and day.weekday() in (1, 3)
+            d.rounded_rectangle([x + 4, y + 4, x + CELL_W - 4, y + CELL_H - 4], radius=14,
+                                fill=CELL if in_window else CELL_OFF,
                                 outline=WHITE if day == START else GRID, width=4 if day == START else 2)
 
             label = day.strftime("%b %-d") if day.day == 1 or day == grid_start else str(day.day)
             d.text((x + 20, y + 16), label, font=font(34, True), fill=WHITE if in_window else "#4a5163")
-            if in_window and class_day:
+            if class_day:
                 tag = "CLASS DAY"
                 tf = font(18, True)
                 tw = d.textlength(tag, font=tf)
-                d.rounded_rectangle([x + CELL_W - tw - 38, y + 20, x + CELL_W - 18, y + 50],
-                                    radius=8, fill=WHITE)
+                d.rounded_rectangle([x + CELL_W - tw - 38, y + 20, x + CELL_W - 18, y + 50], radius=8, fill=WHITE)
                 d.text((x + CELL_W - 28, y + 35), tag, font=tf, fill="#000000", anchor="rm")
                 hint = "study <9:30 \u00b7 10:45\u201312:30 \u00b7 6:15+"
                 d.text((x + 20, y + 62), hint, font=fit_font(d, hint, CELL_W - 40, 19, bold=False), fill=MUTED)
+            if day == START:
+                d.text((x + 20, y + 84), "tonight after 6:15", font=font(19, True), fill=WHITE)
 
-            items = PLAN.get(day) or AFTER.get(day) or []
-            cy = y + (96 if in_window and class_day else 68)
-            for kind, text in items:
-                cy += draw_chip(d, x + 16, cy, CELL_W - 32, kind, text) + 10
+            steps = PLAN.get(day) or AFTER.get(day) or []
+            cy = y + (114 if day == START else 96 if class_day else 68)
+            for n, raw in enumerate(steps, 1):
+                cy += draw_step(d, x + 14, cy, CELL_W - 28, n, raw) + 12
 
-            if not in_window and not items:
-                pass
-            elif day in AFTER:
-                d.text((x + 20, y + CELL_H - 36), "after window", font=font(18), fill="#6b7386")
+            dues = DUE.get(day, [])
+            dy = y + CELL_H - 20 - 32 * len(dues)
+            for t in dues:
+                text = t if t.startswith("submit") else "DUE " + t
+                d.text((x + 20, dy), text, font=fit_font(d, text, CELL_W - 40, 24, min_size=16), fill=RED)
+                dy += 32
+            if day in AFTER:
+                d.text((x + 20, y + CELL_H - 44), "after window", font=font(18), fill="#6b7386")
 
-    fy = top + ROWS * CELL_H + 16
+    fy = TOP + ROWS * CELL_H + 14
     lx = MARGIN
-    legend = [("exam", "EXAM"), ("due", "DUE / SUBMIT"), ("core", "252"), ("core", "335"),
-              ("core", "337"), ("core", "345"), ("core", "380"), ("opt", "optional")]
+    legend = [("exam", "\u2605 EXAM day"), ("light", "light review"), ("due", "DUE (red text)")] + \
+             [("core", k) for k in COURSE]
     for kind, text in legend:
         f = font(24, True)
-        shown = {"exam": "\u2605 EXAM", "due": "DUE / SUBMIT"}.get(kind, text)
-        w = d.textlength(shown, font=f) + 30
-        fill, fg, outline = chip_style(kind, text if kind != "opt" else "x")
-        if fill:
-            d.rounded_rectangle([lx, fy, lx + w, fy + 40], radius=10, fill=fill)
-        else:
+        w = d.textlength(text, font=f) + 30
+        if kind == "exam":
+            d.rounded_rectangle([lx, fy, lx + w, fy + 40], radius=10, fill=EXAM)
+            fg = WHITE
+        elif kind == "light":
             d.rounded_rectangle([lx, fy, lx + w, fy + 40], radius=10, outline=WHITE, width=3)
             fg = WHITE
-        d.text((lx + 15, fy + 20), shown, font=f, fill=fg, anchor="lm")
+        elif kind == "due":
+            fg = RED
+        else:
+            d.rounded_rectangle([lx, fy, lx + w, fy + 40], radius=10, fill=COURSE[text])
+            fg = "#000000"
+        d.text((lx + 15, fy + 20), text, font=f, fill=fg, anchor="lm")
         lx += w + 14
 
     notes = [
-        "NV = not verified.  Exam clocks NV (252 Test 2, 335 MT, 345 Exam 1).  380 Quiz 04: scope = Bayes/LOTP/independence, due NV.",
-        "Later (light only now):  Fri Oct 9 380 MT light pass  \u00b7  Tue Oct 13 deadline stack  \u00b7  Thu Oct 15 252 Test 3  \u00b7  ~Tue Oct 20 380 Midterm (date NV)",
-        "Tue/Thu afternoon deadlines = finish the night before.  Oct 2\u20135 heaviest: keep all three mocks.",
+        "Homework first, then that course's guide PDF.  337 MT1 PDF only after A4 is in.  252 Test2 / 380 Quiz04 PDFs after 252 HW2 / 380 HW03.",
+        "NV = not verified: exam clocks (252 Test2, 335 MT, 345 Exam1), 380 Quiz04 due, 380 MT date (~Tue Oct 20).  Later LIGHT: 252 Test3 Thu Oct 15.",
     ]
-    ny = fy + 62
+    ny = fy + 60
     for n in notes:
         d.text((MARGIN, ny), n, font=fit_font(d, n, W - 2 * MARGIN, 25, bold=False), fill=WHITE)
         ny += 42
