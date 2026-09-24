@@ -1,6 +1,90 @@
 # CSC 252 — Test 2 Study Guide
 
-**Banner — scope PROVISIONAL.** Test 2 scope is **not published**. Practice covers the lectures so far, Decks 01–04: binary numbers and addition, intro to MIPS, logic gates and adders, and MIPS loops, arrays, and bit shifting. That is the canonical label in the inventory and topic map. The **date is confirmed**: Thu Oct 1, 2026, during lecture, 25 minutes.
+## Start Here
+
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite. Reviewed 2026-09-24 evening by Claude Opus 5.5 (see §8c).
+
+> **If you only read one thing:** HW2 (Tue Sep 29 7:00 PM) *is* Test 2 practice -- same binary/MIPS skills. Finish it by **Mon Sep 28 night**, because Tuesday's class stack leaves only 10:45-12:30 and 6:15-7:00 free before the deadline. Then the only must-dos are the Mon 25-minute mock and a calm Wednesday.
+
+### Next scheduled assessment
+
+| Field | Value | Label |
+|-------|-------|-------|
+| Assessment | CSC 252 Test 2 | confirmed item |
+| Date | **Thu Oct 1, 2026** | **confirmed** (lecturer-russ FA26 schedule + Tests calendar) |
+| When | All-day calendar DUE; in-class during the 252 period (9:30-10:45 AM) is **likely** | finer clock **NV** -- no minute mark on site |
+| Length | ~25 min during lecture (Test 1 pattern + topic map) | **likely** -- from Test 1 habit; **not** confirmed by a Test 2 cover sheet |
+| Coverage | Decks 01-04 (binary/addition, intro MIPS, gates/adders, loops/arrays/bit ops) | **PROVISIONAL -- schedule-based review**, not a published blueprint |
+| Deck 05 (ALU) | Linked for the week of Sep 28 | **not claimed as Test 2 scope** |
+
+Do **not** schedule study during class blocks (Tue/Thu through Dec 9, Arizona time):
+CSC 252 9:30-10:45 AM; CSC 335 12:30-1:45 PM; CSC 345 2:00-3:15 PM; CSC 337 3:30-4:45 PM; CSC 380 5:00-6:15 PM.
+All times below are **Arizona (MST, UTC-7)**. Combined daily order lives in `weekly/2026-09-24-weekly-study-order.md`.
+
+**Nearby deadlines (energy only -- not this exam):** CSC 252 HW2 **Tue Sep 29 7:00 PM** (Homework calendar / Gradescope). Asm 2 **Wed Sep 30** (time conflict: asm2.pdf 5:00 PM vs Gradescope/homepage 7:00 PM -- finish by 5:00 PM). Sim 3 Wed Oct 7 7:00 PM (after the test).
+
+### Topics to study first (order + WHY)
+
+1. **`252-T2-binary` -- 2's complement, subtraction, overflow, "negative or not"** -- WHY: Test 1's largest loss cluster + Sim 1 autograder misses; HW2 due Tue Sep 29 so this is also homework-urgent; Deck 01 is already lectured.
+2. **`252-T2-mips-loops` -- loops, arrays, short-circuit, shifts** -- WHY: Deck 04 is this week's lecture (week of Sep 21-24 / into Sep 28); Test 1 also lost C-to-MIPS points; most likely "new since Test 1" material under the provisional label.
+3. **`252-T2-gates` -- SOP, half/full adder, ripple-carry** -- WHY: Deck 03 lectured; Sim 2 just used this; high-yield if Test 2 mixes hardware with MIPS.
+4. **`252-T2-mips-intro` -- registers, addi-not-subi, slt+beq** -- WHY: foundation for loop translations; Test 1 already asked SUBI and allowable-instruction discipline.
+
+**Confirmed vs schedule-based:** Date is confirmed. Coverage is **schedule-based review only** (lectures so far = Decks 01-04). Do not treat Deck 05 ALU as in-scope until the instructor publishes Test 2 topics.
+
+### Day-by-day tasks (minutes; no class-block study)
+
+| When (Arizona) | Window | Task | Guide / slides / problems | Min |
+|----------------|--------|------|---------------------------|-----|
+| Thu Sep 24 evening | After 6:15 PM only (337 3:30-4:45 and 380 5:00-6:15 still in session) | **Only if CSC 345 HW2 is already submitted** (its late window is nearer). Binary triage: re-read invert-add-1 and signed vs unsigned overflow. | Sec `252-T2-binary`; excerpt Deck 01 p.41; P1-P4 | 35 |
+| Fri Sep 25 | Anytime (no class) | Deep: 2's complement + subtraction both ways (worked example in §3); Group A (Test 1 Q1 themes). Start HW2 binary problems the same session. | `252-T2-binary`, `252-T2-gates`; GS-A4, A5, A6, A7, C3, C4 | 90 |
+| Sat Sep 26 | After CSC 345 HW2 late cutoff (2:00 PM) if it is still open | Deep: MIPS intro + loops/arrays; write one full loop on paper. | `252-T2-mips-intro`, `252-T2-mips-loops`; Deck 04 loop/array slides; GS-D3, D4 | 90 |
+| Sun Sep 27 | Anytime | Blind retake of misses; full-adder table from memory. Keep HW2 moving. | All IDs; excerpt Deck 03 p.35; P5-P6, GS-A2 | 70 |
+| Mon Sep 28 | Anytime | **25-minute timed paper mock** (A4, A5, A6, B2, B5, C3, C4, D4), then review misses. **Submit HW2 tonight** (target). | Sec 4b | 50 |
+| Tue Sep 29 | Class stack 9:30-6:15. Free gaps: before 9:30, **10:45-12:30**, after 6:15 | HW2 backup only: use 10:45-12:30 if it is not in; 6:15-7:00 is too short for real work. After HW2: LIGHT flash. | Rotate Group A; no new topics | 20 |
+| Wed Sep 30 | No class. Asm 2 -- finish by **5:00 PM** | LIGHT active recall. **No new topics.** | GS-A4 + D1 + C4 only | 20 |
+| Thu Oct 1 morning | Before 9:30 AM only | Calm buffer. Test during 252 period (clock NV). | Sleep; do not open Deck 05 | 10 |
+
+**Is this enough time?** About 6.5 hours of planned study for a ~25-minute test, plus HW2, which drills the same skills. That is enough **if** the Fri and Sat deep blocks actually happen. If a deep block gets eaten by CSC 345 HW2 or CSC 337 A4, keep the Mon mock and drop the Sun retake to 35 minutes. Do not drop the mock.
+
+### Final self-check
+
+- [ ] Blind pass over all five section IDs (`252-T2-intro` through `252-T2-mips-loops`)
+- [ ] Every Group A item correct from memory (Test 1 biggest loss)
+- [ ] For any 8-bit sum, you can answer **three separate questions** without mixing them up: carry-out? unsigned overflow? signed overflow?
+- [ ] Two subtraction problems done both ways (borrow and invert-add-1)
+- [ ] GS-D4 written from scratch with no notes
+- [ ] Full-adder table and equations redrawn from memory
+- [ ] One 25-minute timed paper mock done
+- [ ] Logistics: Oct 1 in the 252 lecture window; clock still NV; no Wednesday-night cram
+
+### Slide excerpts (personal study channel only)
+
+Not a substitute for the deck. Each excerpt is one page from a harvested lecture PDF.
+
+**Excerpt 1 -- invert-then-add-1 (CSC 252, Deck 01, page 41)**
+
+> *Slide image (CSC 252 Deck 01 p.41 taking 2's complement) is not mirrored in this repo.* It lives on the Munch box at `/home/box/shared/munch/study-guides/csc252/assessments/excerpts/csc252-deck01-p41-twos-complement.png`. The own-words caption below and the original deck page are enough to study from.
+
+In my own words: negation in 2's complement is two mechanical steps -- bitwise NOT, then add 1. The slide starts from +5 (`0000 0101`), flips to `1111 1010`, then adds 1 to get `1111 1011` = -5. Use this exact sequence on P3 and GS-C4. MSB=1 means negative; you do not need a full conversion just to answer "negative or not."
+
+Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc252/csc252-slide-01_binary_numbers_and_addition.pdf` (public: https://lecturer-russ.appspot.com/classes/cs252/fall26/slides/01_binary_numbers_and_addition.pdf), page 41. Personal study channel only.
+
+**Excerpt 2 -- full adder as two half-adders (CSC 252, Deck 03, page 35)**
+
+> *Slide image (CSC 252 Deck 03 p.35 full adder) is not mirrored in this repo.* It lives on the Munch box at `/home/box/shared/munch/study-guides/csc252/assessments/excerpts/csc252-deck03-p35-full-adder.png`. The own-words caption below and the original deck page are enough to study from.
+
+In my own words: a full adder is two half adders plus an OR. The first half adder combines A and B; the second combines that sum with Cin. The two half-adder carry bits OR together to make Cout. Sum is 1 when an odd number of {{A,B,Cin}} are 1; Cout is 1 when at least two are 1. The slide's missing wires are the point: treat each dashed box as a named part.
+
+Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc252/csc252-slide-03_logic_gates_and_adders.pdf` (public: `.../slides/03_logic_gates_and_adders.pdf`), page 35. Personal study channel only.
+
+Also review (no extra image): Deck 02 MIPS intro; Deck 04 loops/arrays (loop shape + `sll` by 2 for word offsets), harvest path `csc252-slide-02_introduction_to_MIPS.pdf` and `csc252-slide-04_MIPS_loops_arrays_bit_ops.pdf`.
+
+
+---
+
+
+**Banner — scope PROVISIONAL.** Test 2 scope is **not published**. Practice covers the lectures so far, Decks 01–04: binary numbers and addition, intro to MIPS, logic gates and adders, and MIPS loops, arrays, and bit shifting. That is the canonical label in the inventory and topic map. The **date is confirmed**: Thu Oct 1, 2026, during lecture. Length is **likely** ~25 minutes (Test 1 pattern), not confirmed.
 
 Canonical maps: `csc252-topic-map.md` · `announced-assessments-inventory-2026-09-24.md` · `site-audit-2026-09-24.md`
 
@@ -11,7 +95,7 @@ Canonical maps: `csc252-topic-map.md` · `announced-assessments-inventory-2026-0
 | Course | CSC 252 Computer Organization (FA26), TuTh 9:30–10:45 AM, Gittings 201 | Confirmed |
 | Assessment | Test 2 | Confirmed (homepage + syllabus) |
 | Date | **Thu Oct 1, 2026** | **Confirmed** |
-| Length / when | 25-minute test during lecture; exact clock time **not published** | Confirmed length; clock time NV |
+| Length / when | ~25-minute test during lecture; exact clock time **not published** | Length **likely** (Test 1 pattern); clock time NV |
 | Paper format | Test 1 was a hand-written paper scanned into Gradescope (about 6 pages, graded by manual rubric). Test 2 format is **not published**. | Practice recommendation (inferred from Test 1) |
 | Coverage | Decks 01–04 | **PROVISIONAL (from lectures so far)** |
 | Deck 05 (ALU) | Linked for the week of Sep 28. Whether it is on Test 2 is **not stated**. | Not claimed as scope |
@@ -96,6 +180,23 @@ To approximate 2^n, split n into a multiple of 10 plus a remainder. For example,
 **Binary subtraction.** Compute A - B as A + (-B): invert B, add 1, then add.
 - In this method, carry-out = 1 means **no borrow** (A >= B as unsigned). Carry-out = 0 means a borrow happened.
 - Signed overflow in subtraction occurs when A and B have **different** signs and the result's sign differs from A's.
+
+**Worked example -- `0x30 - 0x12` in 8 bits (the "no borrow" case).**
+
+```
+  B  = 0x12 = 0001 0010
+ ~B  =        1110 1101
+ -B  = ~B+1 = 1110 1110   (0xEE)
+
+   0011 0000   (0x30 = 48)
+ + 1110 1110   (0xEE)
+ -----------
+ 1 0001 1110   -> keep 8 bits: 0001 1110 = 0x1E = 30
+```
+
+- Carry-out = **1**, so **no borrow**: 48 >= 18 as unsigned. The answer 30 is correct.
+- Signed check: A and B are both positive (same sign), so subtraction **cannot** overflow.
+- Compare GS-C4 and Test 3 P4, where carry-out = 0 means a borrow happened. Know both cases.
 
 ### `252-T2-mips-intro` — Intro MIPS (Deck 02)
 
@@ -299,13 +400,15 @@ LOOP: beq  $t0, $s1, DONE       # i == n -> done
 DONE:
 ```
 
+This `beq $t0, $s1` exit is fine when n >= 0. If n could be negative, use the `slt` + `beq` exit from GS-D4 instead, which also matches the C `i < n` test exactly.
+
 **A9.** Offset = 3 x 4 = 12 = 0xC, so the address is `0x1001000C`.
 
 **A10.** Each bit moves to the next higher power of 2, and a 0 enters at the bottom, so the value doubles. It fails (overflows) when a 1-bit is shifted out of the top.
 
 **A11.** If `x != y` is already true, the whole OR is true, so skip the `a < b` test and enter the body.
 
-**A12.** Thu Oct 1, 2026, during lecture (class meets 9:30–10:45 AM). The test is 25 minutes. The exact clock time within lecture is not published.
+**A12.** Thu Oct 1, 2026 (confirmed), during lecture (class meets 9:30–10:45 AM). Likely ~25 minutes, based on Test 1. The exact clock time within lecture is not published.
 
 ### Gradescope-format keys
 
@@ -418,6 +521,8 @@ END:
 
 ---
 
+
+> **Start Here (top of this guide) is the canonical day-by-day.** The later prep table is kept as a short copy.
 ## 7. Day-by-day prep plan (Tue/Thu light; no day-before cram)
 
 | Day | Focus | Section IDs | Notes |
@@ -426,8 +531,8 @@ END:
 | Fri Sep 25 | 2's complement, subtraction, Group A and C | `252-T2-binary`, `252-T2-gates` | Deep day |
 | Sat Sep 26 | MIPS intro, loops, arrays; Group D | `252-T2-mips-intro`, `252-T2-mips-loops` | Deep day |
 | Sun Sep 27 | Log mistakes, then retake | All | Blind, check, retake |
-| Mon Sep 28 | **25-minute timed paper mock** (§4b) | All | Then review misses |
-| Tue Sep 29 | LIGHT flash only | Rotate | Class day; HW2 due 7:00 PM |
+| Mon Sep 28 | **25-minute timed paper mock** (§4b) | All | Then review misses; submit HW2 tonight (target) |
+| Tue Sep 29 | LIGHT flash only | Rotate | Class day; HW2 due 7:00 PM (backup window 10:45-12:30 only) |
 | Wed Sep 30 | LIGHT active recall only | All | **No new topics**; Asm 2 due (aim for 5:00 PM) |
 | Thu Oct 1 morning | Calm buffer | — | Test in lecture |
 
@@ -441,8 +546,18 @@ END:
 - Removed LaTeX markup that printed literally in the PDF.
 - Added explanations of subtraction, unsigned vs signed overflow, "negative or not", approximations, and why there is no `subi`.
 - Added practice items GS-A4–A7, B4–B6, C4–C5, and D4–D6, plus a 25-minute timed mock. These target your own Test 1 and Sim 1 feedback themes, and all have answer keys.
-- Numeric grades are described in words only, because this review copy lives in a public repository.
+- Numeric grades are described in words only (kept as policy even though this copy now lives in the private `begoneBOT/bob-jeff` repo).
 - Noted Deck 05 (ALU) as linked that week but **not** claimed as Test 2 scope.
+
+## 8c. Opus 5.5 review (2026-09-24 evening, America/Phoenix)
+
+- Re-checked every answer in §5 by hand and by script (binary, overflow, carry/borrow, MIPS addresses). **No wrong answers found.**
+- Tue Sep 29: HW2 moved to a **Mon Sep 28 night** target. Tuesday's only real free window before 7:00 PM is 10:45-12:30.
+- Thu Sep 24 triage is now gated on CSC 345 HW2 being submitted, matching the weekly priority order.
+- Length label changed from "confirmed" to **likely**. The verified facts sheet only confirms the date; ~25 min comes from the Test 1 pattern.
+- Added a carry-out = 1 ("no borrow") subtraction worked example. The practice set previously had only borrow cases.
+- Added an "is this enough time?" check and a three-question overflow self-check.
+- Slide images are not in this repo, so the embeds became text pointers to the box path. The captions are kept.
 
 ## 9. Study-aid / academic-integrity disclaimer
 

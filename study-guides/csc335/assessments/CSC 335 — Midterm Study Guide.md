@@ -1,5 +1,87 @@
 # CSC 335 — Midterm Study Guide
 
+## Start Here
+
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite. Reviewed 2026-09-24 evening by Claude Opus 5.5 (see §8c).
+
+> **If you only read one thing:** the core 335 prep is **Fri Oct 2 - Mon Oct 5** (about 5 hours, ending in a 50-minute mock). Earlier rows are bank-ahead sessions, done only if nearer deadlines are on track. The **thinnest area is the syllabus-only half** (generics, collections, JavaFX/patterns), which gets one block on Sun Oct 4. Write 3 bullets after each Tue Sep 29 and Thu Oct 1 lecture so that block has real notation to work from.
+
+### Next scheduled assessment
+
+| Field | Value | Label |
+|-------|-------|-------|
+| Assessment | CSC 335 Midterm Exam | confirmed item |
+| Date | **Thu Oct 8, 2026** | **confirmed** (D2L / syllabus) |
+| Time | Class period 12:30-1:45 PM is the meeting; exact start **TBD** | clock **NV** |
+| Format / materials | "Closed-book, in-class" per the D2L lessons note (facts sheet). Length and question format are **not** stated | closed-book: stated once, **re-verify**; length/format **NV** |
+| Coverage | Decks on box (Intro, OOP, Classes 1-2, Testing & Javadoc = weeks 1-3) plus syllabus-only topics for weeks 3-6 | **PROVISIONAL -- schedule-based review** |
+| Same day | CSC 345 Exam 1 is also Oct 8 (Commons 305 at 2:00 PM class) | plan energy; both clocks NV beyond class periods |
+
+Do **not** schedule study during class blocks (Tue/Thu through Dec 9, Arizona time):
+CSC 252 9:30-10:45 AM; CSC 335 12:30-1:45 PM; CSC 345 2:00-3:15 PM; CSC 337 3:30-4:45 PM; CSC 380 5:00-6:15 PM.
+All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026-09-24-weekly-study-order.md`.
+
+**Do not invent pop quizzes.** Quiz 1 window ended **Thu Sep 24 12:30** (past). P3 is syllabus-listed but **not** in D2L Assignments -- **NV**, no study time planned around it.
+
+### Topics to study first (order + WHY)
+
+1. **`335-M-oop` + `335-M-classes1` -- encapsulation, UML, composition** -- WHY: on-box decks exist; UML is high-yield and easy to lose; week-1 material that later patterns sit on.
+2. **`335-M-testing` + `335-M-classes2` -- JUnit, Javadoc, static vs instance, exceptions** -- WHY: on-box decks; week 2-3 already lectured; tracing (T1-T4) targets these.
+3. **`335-M-lambdas` + `335-M-generics`** -- WHY: syllabus weeks 3-4; **[Syllabus-only]** -- no deck on box; match lecture notation.
+4. **`335-M-collections` + `335-M-javafx-obs`** -- WHY: syllabus weeks 5-6 (week 6 is Sep 29-Oct 1 -- JavaFX/Observer/Composite **as lectured**). Week 7 is review only.
+5. After those: `335-M-intro` for motivation vocabulary.
+
+**Confirmed vs schedule-based:** Date confirmed. Scope is **not published**. Rows tagged [Deck] are harvested lecture content. Rows tagged [Syllabus-only] are schedule-based review.
+
+### Day-by-day tasks (minutes; no class-block study)
+
+Prefer Mon/Wed/Fri and weekends. Split with 345 Exam 1. After Oct 1, 337 Midterm 1 (Oct 6) outranks 335 until Tuesday evening.
+
+| When | Window | Task | Guide / slides / problems | Min |
+|------|--------|------|---------------------------|-----|
+| Thu Sep 24 evening | After 6:15 PM only | Optional 15-min UML flash if 345 HW2 is already in. | `335-M-classes1`; excerpt Classes-part1 p.2 | 15 |
+| Fri Sep 25 | After 345 HW2 late-window work | Intro + OOP + Classes 1. | `335-M-intro`, `oop`, `classes1`; P1-P3 | 45 |
+| Sat Sep 26 | After 2:00 PM (345 HW2 late cutoff) | Testing + Classes 2. | `335-M-testing`, `classes2`; P4-P8; T1, T3 | 60 |
+| Sun Sep 27 | Light -- 252 Test 2 still nearer | Lambdas only if the Sun 252 retake is done. | `335-M-lambdas`; W2 | 25 |
+| Mon Sep 28 - Thu Oct 1 | After 252 Test 2 prep; Tue/Thu only outside class blocks | Do **not** steal 252 deep time. Optional 15-min 335 flash. After the Tue Sep 29 and Thu Oct 1 lectures (after 6:15 PM), write 3 bullets on what was taught (week 6 = JavaFX / Observer / Composite). | S3 exceptions; lecture bullets | 15 |
+| Fri Oct 2 | Anytime | Intro/OOP/Classes 1 redraw + UML. | excerpt p.2; P3; W1 | 70 |
+| Sat Oct 3 | Anytime | Testing, Classes 2, lambdas. | T1-T4; P4; W2 | 80 |
+| Sun Oct 4 | Anytime | Generics, collections, patterns, JavaFX **as lectured**. | `generics`, `collections`, `javafx-obs`; S1, S2, W3 | 80 |
+| Mon Oct 5 | Anytime | **50-minute paper mock** (T1-T4, W1-W3, S1-S4), then retake misses. | Sec 4b | 70 |
+| Tue Oct 6 | 337 midterm today -- 335 is optional light **after 6:15 PM** (CSC 380 meets 5:00-6:15) | Flash only. | S1 + T2 | 15 |
+| Wed Oct 7 | No class | Light mixed review. **No cram.** Sim 3 is 252's job tonight. | All IDs, light | 35 |
+| Thu Oct 8 morning | Before 9:30 AM or 10:45-12:30 **only** (CSC 252 meets 9:30-10:45) | Calm buffer. Midterm in the 335 period (clock NV). | -- | 10 |
+
+Rows before Fri Oct 2 are **bank-ahead**: they only happen if CSC 345 HW2, CSC 337 A4, CSC 252 HW2, and CSC 380 HW03 are on track. **Is this enough time?** The core block (Fri Oct 2 - Mon Oct 5) is about 5 hours, and the bank-ahead rows add roughly 2.5-3. For a first midterm that is adequate **if** the Sun Oct 4 syllabus-only block happens with real lecture notes. If a bank-ahead row is skipped, do not try to make it up on Wed Oct 7. Shorten the Fri Oct 2 redraw instead.
+
+### Final self-check
+
+- [ ] Blind pass over all nine section IDs
+- [ ] One UML composition sketch redrawn from memory
+- [ ] Three JUnit tests written (normal / edge / error)
+- [ ] 50-minute mock done
+- [ ] Syllabus-only topics matched to **actual lecture notation**
+- [ ] Can explain T4 (overload chosen at compile time, override at runtime) to someone else in two sentences
+- [ ] Can name the pattern in each part of S1 **and** say which class plays which role
+- [ ] P3 still treated as NV
+- [ ] Energy reserved for 345 Exam 1 the same afternoon
+
+### Slide excerpts (personal study channel only)
+
+**Excerpt -- UML class-box vocabulary (CSC 335, Classes part 1, PDF page 2)**
+
+> *Slide image (CSC 335 Classes part 1 p.2 UML) is not mirrored in this repo.* It lives on the Munch box at `/home/box/shared/munch/study-guides/csc335/assessments/excerpts/csc335-classes1-p2-uml.png`. The own-words caption below and the original deck page are enough to study from.
+
+In my own words: a UML class box is name / fields / methods. Visibility marks are `-` private, `+` public, `#` protected. A field can also show type, multiplicity, and a default. Class diagrams show how types relate; sequence diagrams show calls over time. When you sketch `Library` composed of `Book`s, put the filled diamond on the `Library` (whole) end -- that is composition ("has-a"), not inheritance (hollow triangle).
+
+Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc335/csc335-classes-part1.pdf` (D2L Slides; header may show 2025 -- FA26 topic practice only), page 2. Personal study channel only.
+
+Also review (no extra image): `csc335-oop.pdf`, `csc335-classes-part2.pdf`, `csc335-testing-and-javadoc.pdf` in the same harvest folder. JavaFX / generics / collections are syllabus-only until a deck appears.
+
+
+---
+
+
 **Banner — scope PROVISIONAL.** Midterm scope is **not published**. Practice covers the lectures so far plus the syllabus weeks 1–6 topics. The **date is set**: Thu Oct 8, 2026, in the class period; the clock time is TBD beyond "class period".
 
 **No Gradescope.** CSC 335 is D2L-primary, and the Classroom50 FA26 page returns 404. **No Gradescope format is used or invented here.** On-box decks may show **2025** headers; they are used for FA26 topic practice only.
@@ -16,8 +98,8 @@ Canonical maps: `csc335-topic-map.md` · `announced-assessments-inventory-2026-0
 | Assessment | Midterm Exam | Confirmed |
 | Date | **Thu Oct 8, 2026** | **Scheduled** (D2L / syllabus) |
 | Time | Class period; exact clock time **TBD** | NV |
-| Format / materials | **Not published.** Closed-book and length are not in the inventory. | **Verify** on D2L or in class |
-| Coverage | Decks on box (Intro, OOP, Classes 1–2, Testing & Javadoc) plus syllabus weeks 3–6 topics | **PROVISIONAL** |
+| Format / materials | "Closed-book, in-class" per the D2L lessons note (facts sheet). Length and question format are **not published**. | Closed-book: **re-verify**; length/format **NV** |
+| Coverage | Decks on box (Intro, OOP, Classes 1–2, Testing & Javadoc = weeks 1–3) plus syllabus-only topics for weeks 3–6 | **PROVISIONAL** |
 | Same day | CSC 345 Exam 1 is also Oct 8. If both are held in class, they are **back-to-back in the same room**: 335 at 12:30, 345 at 2:00, both in Commons 305. Clock times are unverified. | Plan energy |
 | Guide updated | 2026-09-24 (America/Phoenix) — Opus + Content-fold note | |
 
@@ -73,6 +155,24 @@ Week 7 is "Review for midterm." Nothing new.
 - **UML class box:** the name, then fields, then methods. `-` means private, `+` public, `#` protected.
 - **Information hiding:** fields are private, with accessors only where needed, and no leaking of mutable internals.
 
+**Worked example -- `Library` composed of `Book`s (ASCII sketch).**
+
+```
++----------------------+            +----------------------+
+| Library              |            | Book                 |
++----------------------+ 1     0..* +----------------------+
+| - books: List<Book>  |<#>---------| - title: String      |
+| - name: String       |            | - isbn: String       |
++----------------------+            +----------------------+
+| + addBook(b: Book)   |            | + getTitle(): String |
+| + count(): int       |            +----------------------+
++----------------------+
+```
+
+- `<#>` stands for the **filled diamond**. It sits on the **whole** (`Library`) end.
+- Multiplicity: one `Library` owns zero or more `Book`s (`1` near Library, `0..*` near Book).
+- If a `Book` could exist on its own and be shared across libraries, that is **aggregation**, drawn with a hollow diamond instead. If the lecture's example differs, follow the lecture.
+
 ### Testing & Javadoc (`335-M-testing`) [Deck]
 
 - **Unit tests** check one class or method in isolation. **Integration tests** check parts working together.
@@ -108,7 +208,8 @@ Week 7 is "Review for midterm." Nothing new.
 ### Generics (`335-M-generics`) [Syllabus-only]
 
 - `class Box<T> { private T item; ... }` is type-safe reuse, checked at compile time. There is no casting, and wrong types are caught early.
-- **Type erasure:** generic type information is removed at runtime, so `new T()` and `List<int>` are not allowed. Use `List<Integer>`, which relies on autoboxing.
+- **Type erasure:** generic type information is removed at runtime, so `new T()` is not allowed (the runtime doesn't know what T is).
+- **No primitives as type arguments:** `List<int>` is not allowed, because type arguments must be reference types. Use `List<Integer>`, which relies on autoboxing.
 - **Bounded types:** `<T extends Comparable<T>>` lets you call `compareTo` on T.
 - **Design patterns** are named, reusable solutions to recurring design problems. A **framework** calls your code ("inversion of control"), whereas you call a library.
 
@@ -122,7 +223,7 @@ Week 7 is "Review for midterm." Nothing new.
 
 **`equals` and `hashCode`.** If you override `equals`, you must also override `hashCode`, or `HashSet` and `HashMap` will misbehave.
 
-**Iterator pattern.** Traverse a collection without exposing its internals, using `hasNext()` and `next()`. Removing an element during a for-each loop throws `ConcurrentModificationException`; use `iterator.remove()` instead.
+**Iterator pattern.** Traverse a collection without exposing its internals, using `hasNext()` and `next()`. Removing an element from the collection during a for-each loop is a bug. It usually throws `ConcurrentModificationException`, though not on every input. Use `iterator.remove()` instead.
 
 **Template Method pattern.** A superclass method defines the fixed **skeleton** of an algorithm and calls abstract or "hook" steps that subclasses override. The skeleton is often `final`.
 
@@ -254,7 +355,7 @@ public class Account { public double balance; }
 
 **A2.** Cohesive classes are easier to understand, test, and change. Low coupling limits ripple effects when something changes.
 
-**A3.** `Library` (filled diamond) composition to `Book`, multiplicity many (UML star, or 0..star) on the Book end. Follow the Classes 1 deck's notation.
+**A3.** Composition from `Library` to `Book`: filled diamond on the `Library` end, `1` near Library, and `0..*` (or `*`) near Book. See the ASCII sketch in §3 (Classes 1). Follow the Classes 1 deck's notation.
 
 **A4.**
 
@@ -372,6 +473,8 @@ public static <T extends Comparable<T>> T max(List<T> xs) {
 
 ---
 
+
+> **Start Here (top of this guide) is the canonical day-by-day.** The later prep table is kept as a short copy.
 ## 7. Day-by-day prep
 
 The same day as CSC 345 Exam 1, so split effort. Prefer Mon/Wed/Fri and weekends for 335.
@@ -381,10 +484,10 @@ The same day as CSC 345 Exam 1, so split effort. Prefer Mon/Wed/Fri and weekends
 | Fri Oct 2 | Intro, OOP, Classes 1 | intro, oop, classes1 |
 | Sat Oct 3 | Testing, Classes 2, lambdas | testing, classes2, lambdas |
 | Sun Oct 4 | Generics, collections, patterns, JavaFX | generics, collections, javafx-obs |
-| Mon Oct 5 | **50-minute mock** (§4b), then retake misses | all |
+| Mon Oct 5 | **50-minute mock** (§4b), then retake misses (after the CSC 337 rotation; 337 is Tuesday) | all |
 | Tue Oct 6 | Optional light flash (the 337 midterm is today) | — |
 | Wed Oct 7 | Light mixed review, not a cram | all, light |
-| Thu Oct 8 morning | Calm buffer only | — |
+| Thu Oct 8 morning | Calm buffer only (before 9:30 or 10:45-12:30) | — |
 
 ---
 
@@ -396,6 +499,16 @@ The same day as CSC 345 Exam 1, so split effort. Prefer Mon/Wed/Fri and weekends
 - Changed "closed-book" to **verify**, and noted the possible back-to-back schedule with the CSC 345 exam.
 - Improved UML notation guidance (composition, aggregation, inheritance, realization).
 - Changed times to Arizona time.
+
+## 8c. Opus 5.5 review (2026-09-24 evening, America/Phoenix)
+
+- Compiled and ran T1-T4, W2 (both forms), and W3 with `javac`/`java`. The outputs match the keys (`2 1 3`, `I say meow`, `F 2`/`F 1`, `C-Object`). **No wrong answers found.**
+- **Weekday fix:** "Mon Sep 28 - Wed Oct 1" is now "Thu Oct 1" (Oct 1 is a Thursday).
+- **Class-block fix:** the Thu Oct 8 buffer said "before 12:30 PM", which overlaps CSC 252 (9:30-10:45). It now says before 9:30 or 10:45-12:30.
+- **Logic fix:** Sun Sep 27 lambdas were gated on "252 mock done", but that mock is Monday. The gate is now the Sunday 252 retake.
+- Harmonized the closed-book label. The facts sheet says "closed-book in-class" per the D2L lessons note, and the old header said "not in inventory". It is now "stated once, re-verify". Also fixed the weeks 1-6 vs 3-6 coverage mismatch.
+- Added an ASCII UML composition worked example with multiplicities, split type-erasure from the primitives rule, and softened the ConcurrentModificationException claim (it is not guaranteed).
+- Marked pre-Oct 2 rows as bank-ahead, added an "is this enough time?" check, and added lecture-bullet capture for the syllabus-only topics.
 
 ## 9. Disclaimer
 

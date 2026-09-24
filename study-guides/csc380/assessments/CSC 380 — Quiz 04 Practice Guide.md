@@ -1,5 +1,88 @@
 # CSC 380 — Quiz 04 Practice Guide
 
+## Start Here
+
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite. Reviewed 2026-09-24 evening by Claude Opus 5.5 (see §8c).
+
+> **If you only read one thing:** the scope is confirmed but the due date is **not**, so the plan is to stay quiz-ready rather than count down. HW03 (due Tue Sep 29 11:59 PM) drills the same skills; finish it first. **Check Gradescope and D2L for a posted Quiz 04 due every Mon and Thu evening** (after 6:15 PM on Thu). When one appears, use the "short-notice" row below.
+
+### Next scheduled assessment
+
+| Field | Value | Label |
+|-------|-------|-------|
+| Assessment | CSC 380 Quiz 04 (practice guide) | item announced (D2L Sep 18) |
+| Due date/time | **Needs verification** -- not on Gradescope as of 2026-09-24 14:03 audit | **NV -- do not invent** |
+| Coverage | Bayes' rule; law of total probability; independence; **slides pp. 43-68** | **PUBLISHED SCOPE (confirmed)** |
+| Quiz policy | 12 quizzes, 1.5% each; drop two lowest; no make-ups | confirmed (syllabus) |
+| Past format | Quiz 01 = one rubric question, one page, 1.5 points | practice recommendation only |
+
+Do **not** schedule study during class blocks (Tue/Thu through Dec 9, Arizona time):
+CSC 252 9:30-10:45 AM; CSC 335 12:30-1:45 PM; CSC 345 2:00-3:15 PM; CSC 337 3:30-4:45 PM; CSC 380 5:00-6:15 PM.
+All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026-09-24-weekly-study-order.md`.
+
+**This is an open practice guide, not a countdown.** The syllabus "quizzes every Tuesday" cadence is **not** a verified Quiz 04 due date.
+
+**Related (separate):** CSC 380 **HW03** (written) + **HW03 Code** both due **Tue Sep 29 11:59 PM**. Overlap (Bayes/independence) is real; this guide does **not** solve HW3. After nearer exams (252 Test 2 Oct 1, 337 Oct 6, 335+345 Oct 8), interleave Quiz 04 mocks.
+
+### Topics to study first (order + WHY)
+
+1. **`380-Q04-refresh` -- conditional probability** -- WHY: week-2 quiz was the weakest of the first three (words only); Bayes is just this rearranged.
+2. **`380-Q04-lotp` -- law of total probability** -- WHY: published scope; it is the Bayes denominator; slides around p.18-20 of Probability 2 short, and the 43-68 window.
+3. **`380-Q04-bayes` -- Bayes' rule + table method** -- WHY: published scope; starts at slide 43 in `26f380_probability2_short.pdf`.
+4. **`380-Q04-indep` -- independence vs mutually exclusive** -- WHY: published scope; product-rule check, not intuition.
+5. **`380-Q04-slides` -- work the examples on slides 43-68** -- WHY: that page range is the only **confirmed** coverage.
+
+**Confirmed vs schedule-based:** Scope is **confirmed**. Due datetime is **NV**. Do not build a day-before cram until Gradescope or D2L posts a due.
+
+### Day-by-day tasks (open practice; no invented due)
+
+| When | Window | Task | Guide / slides / problems | Min |
+|------|--------|------|---------------------------|-----|
+| Thu Sep 24 | After 6:15 PM only | Do **not** invent a Friday quiz. If HW03 is open, work HW03 (not this key). Optional 15-min LOTP identity. | `380-Q04-lotp`; excerpt p.19; Qmu2 | 15 |
+| Fri Sep 25 | After 345 HW2 / 252 deep | HW03 primary. Then one Bayes table. | excerpt p.47; T1 / S1 | 25 |
+| Sat Sep 26 - Sun Sep 27 | After 252 / A4 | HW03. One independence product check per day. | S2; CQ2 | 15 |
+| Mon Sep 28 | Anytime | Aim to have HW03 written + Code **nearly done tonight**; Tuesday's free time is mostly after 6:15 PM. One product check if time. | Quiz B (a) | HW03 + 10 |
+| Tue Sep 29 | HW03 + HW03 Code due 11:59 PM. Class stack 9:30-6:15; work after 6:15 PM (or 10:45-12:30) | Submit both GS items. No Quiz 04 cram. | -- | HW03 |
+| Wed Sep 30 | No class | One 10-min mock (Quiz A) if HW03 is in. | Mock Quiz A | 15 |
+| After Thu Oct 1 (252 Test 2 done) | Outside class blocks | Interleave mocks B, C, D and CQ1-CQ4. | Sec 4b + 4c | 15-20 each |
+| When a due date appears on GS/D2L (48+ hours of notice) | 24-48 hours before that **posted** time | Light review of slides 43-68 + one mock. | `380-Q04-slides` | 30 |
+| When a due date appears with **under 24 hours** of notice | Next free window outside class blocks | Mock Quiz D + CQ4 (the two most exam-like), then check the keys. Skip everything else. | Sec 4b + 4c | 20 |
+
+On Tue/Thu, study only outside the whole 9:30-6:15 class stack (the free gaps are before 9:30, 10:45-12:30, and after 6:15). Deep drills Mon/Wed/Fri and weekends **after** nearer exam work.
+
+### Final self-check
+
+- [ ] Mock Quizzes A-D each done in 10 minutes with at least 1.0 of 1.5
+- [ ] CQ1-CQ4 done blind, then checked
+- [ ] Three independence checks computed on both sides
+- [ ] Slides 43-68 worked (Probability 2 short)
+- [ ] **No countdown cram** until a due date is verified
+- [ ] HW03 written + Code both submitted Sep 29
+
+### Slide excerpts (personal study channel only)
+
+**Excerpt 1 -- LOTP expansion (CSC 380, Probability 2 short, page 19)**
+
+> *Slide image (CSC 380 Probability 2 short p.19 LOTP) is not mirrored in this repo.* It lives on the Munch box at `/home/box/shared/munch/study-guides/csc380/assessments/excerpts/csc380-prob2-p19-lotp.png`. The own-words caption below and the original deck page are enough to study from.
+
+In my own words: if the B_i partition the sample space (no overlap, nothing left out), then P(A) = sum_i P(A | B_i) P(B_i). The slide's picture is "CS major" split across class years: the total CS-major probability is each year's CS rate times that year's share. This sum is the Bayes denominator.
+
+Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc380/csc380-26f380_probability2_short.pdf` (xinchenyu / D2L Resources), page 19. Personal study channel only. Quiz 04 published window is slides **43-68**; this p.19 page is the LOTP identity those later slides reuse.
+
+**Excerpt 2 -- Bayes formula (CSC 380, Probability 2 short, page 47)**
+
+> *Slide image (CSC 380 Probability 2 short p.47 Bayes) is not mirrored in this repo.* It lives on the Munch box at `/home/box/shared/munch/study-guides/csc380/assessments/excerpts/csc380-prob2-p47-bayes.png`. The own-words caption below and the original deck page are enough to study from.
+
+In my own words: P(A | B) = P(A) P(B | A) / P(B). The easy derivation is the chain rule twice: P(A and B) = P(A) P(B | A) = P(B) P(A | B). The common exam mistake is swapping likelihood and posterior (saying P(disease | +) = P(+ | disease)). Always compute P(B) with LOTP first, or use the prior x likelihood table and divide by the column sum.
+
+Original deck: same PDF, page 47 (inside the published 43-68 window). Personal study channel only.
+
+Also work (no extra image): remaining examples on slides 48-53 and 43-68 of that deck; independence product checks in the long/short Probability 3 decks if you want more reps.
+
+
+---
+
+
 **Banner — PUBLISHED SCOPE; due date NEEDS VERIFICATION.**
 - **Scope is published** (D2L announcement, Sep 18, 2026): Bayes' rule, the law of total probability (LOTP), and independence, covering **slides pp. 43–68**.
 - **The due date is not verified.** Quiz 04 was not on Gradescope as of the 2026-09-24 audit (~14:03 Arizona time). The syllabus cadence ("quizzes every Tuesday unless noted") is **not** a verified due date. **Never invent a due date.** This is an open practice guide, not a countdown plan.
@@ -34,7 +117,7 @@ All times are **Arizona time (MST)**.
 
 **Related but separate:** HW3 (Probability 2) is due **Tue Sep 29, 11:59 PM**. It has **two** Gradescope items, HW03 (written) and HW03 Code, and both must be submitted. It overlaps these topics, but HW3 is **not** this guide's target, and nothing here solves it.
 
-**Notation.** In this guide, **not-A** means the complement of A (often written not-A or not-A on slides). P(A | B) is read "probability of A given B."
+**Notation.** In this guide, **not-A** means the complement of A. Slides often write it as A^c or as A with a bar over it. P(A | B) is read "probability of A given B."
 
 ---
 
@@ -299,6 +382,8 @@ Factories F1 and F2 make 70% and 30% of chargers. Defect rates: 1% from F1, 4% f
 
 ---
 
+
+> **Start Here (top of this guide) is the canonical day-by-day.** The later prep table is kept as a short copy.
 ## 7. Open practice checklist (no due-date cram plan)
 
 | Mode | Action |
@@ -316,7 +401,7 @@ Factories F1 and F2 make 70% and 30% of chargers. Defect rates: 1% from F1, 4% f
 - Replaced the complement symbol "c" with "not-A", because it rendered as a missing-glyph box in the old PDF. Added a notation note.
 - Added quiz policy facts from the syllabus (12 quizzes, drop the 2 lowest, no make-ups) and the HW3 two-item submission reminder.
 - Added Mock Quizzes A–D (one page, three parts at 0.5 points each), a filled Bayes table (T1), and a stretch sequential-update item. All have keys.
-- Stated the weak-early-quiz signal in words only, with no scores, because the repository is public.
+- Stated the weak-early-quiz signal in words only, with no scores (policy kept; this copy is now in the private `begoneBOT/bob-jeff` repo).
 - Changed times to Arizona time.
 
 
@@ -325,6 +410,14 @@ Factories F1 and F2 make 70% and 30% of chargers. Defect rates: 1% from F1, 4% f
 - Folded Content `quiz01_03` + HW02/HW03 citations into Sources; added CQ1-CQ4 similar-style practice (**Practice recommendation**) from Quiz 03 / HW3 grain without copying live quiz or HW solutions.
 - Published Quiz 04 scope unchanged (Bayes / LOTP / independence; slides 43-68). Due date still **NV**.
 - ASCII-only math pass (no unicode subscripts / Sigma / mu) so PDF does not render missing-glyph boxes.
+
+## 8c. Opus 5.5 review (2026-09-24 evening, America/Phoenix)
+
+- Recomputed every key with exact fractions: S1-S3, T1, Mock Quizzes A-D, CQ1-CQ4, Qmu1-Qmu5, and the disease example. **No wrong answers found.** The C1 tolerance (+/-0.02) is about 2.5 standard errors for roughly 3,900 red draws, which is reasonable.
+- **Class-block fix:** Tue Sep 29 said only "no study 5:00-6:15". The whole 9:30-6:15 stack is off-limits. Added a Mon Sep 28 "HW03 nearly done" row so Tuesday is not a 6:15-11:59 PM scramble.
+- Added a **short-notice** row (Mock D + CQ4, 20 min) for a due date posted with under 24 hours' notice, and a twice-weekly "check for a posted due" habit. **No due date was invented**; it is still NV.
+- Fixed the garbled notation note ("not-A or not-A" is now "A^c or A-bar").
+- Slide images are not in this repo, so the embeds became text pointers. The captions are kept.
 
 ## 9. Study-aid / AI-policy disclaimer
 
