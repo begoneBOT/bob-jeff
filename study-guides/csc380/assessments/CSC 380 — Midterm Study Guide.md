@@ -2,7 +2,9 @@
 
 ## Start Here
 
-**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite. **LIGHT / date NV.**
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite. **LIGHT / date NV.** Reviewed 2026-09-24 evening by Claude Opus 5.5 (see §8c).
+
+> **If you only read one thing:** do nothing midterm-specific until after Oct 8, except Quiz 04 practice. Re-verify the **tentative** Oct 20 date during Oct 13-19. If it is confirmed, use the contingent plan below. If not, keep it light.
 
 ### Next scheduled assessment
 
@@ -35,10 +37,23 @@ All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026
 | When | Window | Task | Guide / slides / problems | Min |
 |------|--------|------|---------------------------|-----|
 | Now - Oct 1 | After HW03 / 252 Test 2 only | Quiz 04 practice. **Not** a midterm marathon. | Quiz 04 guide | see Quiz 04 |
-| Sat Oct 3 | After 337/335/345 deep blocks | One light pass over the `380-L-*` map + L1-L10. | Sec 2-4 | 35 |
-| Tue Oct 13 | HW4 due 11:59 PM (written + Code) | HW4. Then **re-verify** midterm date/scope. | D2L / https://xinchenyu.github.io/csc380/calendar/ | HW4 + 10 |
+| Fri Oct 9 | No class; after the Oct 8 exam cluster | One light pass over the `380-L-*` map + L1-L10. (Moved from Sat Oct 3, which is the heaviest 337/335/345 prep day.) | Sec 2-4 | 35 |
+| Mon Oct 12 | Anytime | Aim to finish HW4 written + Code tonight, if released. Tue Oct 13 is a class day that also carries CSC 345 PP2 (2:00 PM) and 252 HW3 (7:00 PM, rule-derived). | HW4 | HW4 |
+| Tue Oct 13 | HW4 due 11:59 PM (written + Code). Free gaps: before 9:30, 10:45-12:30, after 6:15 | Submit HW4. Then **re-verify** midterm date/scope. | D2L / https://xinchenyu.github.io/csc380/calendar/ | 10 |
 | Oct 13-19 | Outside class blocks | Re-verify date. Densify **only if confirmed**. | -- | -- |
 | If Oct 20 is confirmed | Sit 5:00-6:15 PM. Night before: calm review only | L1-L11 + Quiz 04 fluency | 30 light |
+
+**Contingent plan -- use ONLY if the Oct 20 date is confirmed by about Tue Oct 13.** This adds no new date; it only says how to use the week if the tentative date holds. Thu Oct 15 is CSC 252 Test 3, so the deep days are after it:
+
+| When (contingent) | Task | Min |
+|-------------------|------|-----|
+| Fri Oct 16 | pandas + viz recall (L8, L9); random variables (L3, L4) | 60 |
+| Sat Oct 17 | Weeks 4-7 **as lectured**: distributions, covariance/correlation (L5); redo Quiz 04 Mock C and D | 90 |
+| Sun Oct 18 | 60-minute paper mock: L1-L11 plus two Quiz 04 mocks; then redo misses | 80 |
+| Mon Oct 19 | Light review of misses only | 30 |
+| Tue Oct 20 | Calm buffer before 9:30 or 10:45-12:30 only; exam 5:00-6:15 if confirmed | 10 |
+
+**Is this enough time?** The light plan (~1.5 hours before Oct 13) is right while the date is NV. If the date is confirmed, the contingent plan adds about 4.5 hours, which is adequate if it is a lecture-period (5:00-6:15) midterm as tentatively listed.
 
 ### Final self-check (light)
 
@@ -173,15 +188,15 @@ The Gradescope format notes show that quizzes are about 1.5 points on a single p
 
 **L2.** C(7, 3) = 35. P(exactly 2 heads in 4 flips) = C(4, 2)/2^4 = 6/16 = **0.375**.
 
-**L3.** E[X] = 3.5. E[X^2] = 91/6. Var(X) = 91/6 - 12.25 = **35/12 ≈ 2.917**.
+**L3.** E[X] = 3.5. E[X^2] = 91/6. Var(X) = 91/6 - 12.25 = **35/12 ~= 2.917**.
 
 **L4.** E[X] = 10·0.3 = **3**. Var(X) = 10·0.3·0.7 = **2.1**.
 
 **L5.** The means are 2 and 4. The deviations are (-1, 0, 1) for X and (-2, 0, 2) for Y, so the sum of products is 2 + 0 + 2 = 4. Sample covariance = 4 / (3 - 1) = **2**. The sample standard deviations are 1 and 2, so correlation = 2 / (1·2) = **1**, a perfect positive linear relationship. With the population denominator, the covariance is 4/3, and the correlation is still 1.
 
-**L6.** P(E) = 0.9·0.2 + 0.3·0.8 = 0.42. P(H | E) = 0.18 / 0.42 = **3/7 ≈ 0.429**.
+**L6.** P(E) = 0.9·0.2 + 0.3·0.8 = 0.42. P(H | E) = 0.18 / 0.42 = **3/7 ~= 0.429**.
 
-**L7.** 0.25 × 0.4 = 0.1 = P(A and B). **Yes, independent.**
+**L7.** 0.25 x 0.4 = 0.1 = P(A and B). **Yes, independent.**
 
 **L8.** (a) Histogram (or box plot). (b) Scatter plot. (c) Bar chart.
 
@@ -219,10 +234,10 @@ The Gradescope format notes show that quizzes are about 1.5 points on a single p
 | Window | Action |
 |--------|--------|
 | Now – early Oct | Quiz 04 practice and HW3/HW4 probability. **Not** a midterm marathon. |
-| Sat Oct 3 | One light pass over the `380-L-*` concept map and L1–L10 |
-| Tue Oct 13 | HW4 due 11:59 PM (written plus Code) |
+| Fri Oct 9 | One light pass over the `380-L-*` concept map and L1–L10 (after the Oct 8 exam cluster) |
+| Tue Oct 13 | HW4 due 11:59 PM (written plus Code); aim to finish Mon Oct 12 night |
 | Oct 13–19 | **Re-verify** the date and scope on D2L, the site, or the tracker. Densify only after that. |
-| If Oct 20 is confirmed | Sit the midterm at 5:00–6:15 PM. The night before, calm review only. |
+| If Oct 20 is confirmed | Use the contingent plan in Start Here (Fri Oct 16 - Mon Oct 19). Sit the midterm at 5:00–6:15 PM. The night before, calm review only. |
 
 Do deeper work Mon/Wed/Fri and weekends; keep Tuesdays and Thursdays light.
 
@@ -240,6 +255,14 @@ Do deeper work Mon/Wed/Fri and weekends; keep Tuesdays and Thursdays light.
 ## 8b. Content-fold (2026-09-24, America/Phoenix)
 
 - Light only: cited Content quiz01_03 + HW01-03; added L11 similar-style LOTP+Bayes drill. Date/scope banners unchanged (NV / PROVISIONAL / LIGHT). No dense invent.
+
+## 8c. Opus 5.5 review (2026-09-24 evening, America/Phoenix)
+
+- Recomputed L1-L11 (combinations, die mean/variance = 35/12, binomial, sample covariance/correlation, Bayes, independence, the L11 LOTP). **No wrong answers found.**
+- **Order fix:** the one light 380 pass moved from Sat Oct 3, the heaviest 337/335/345 prep day, to Fri Oct 9, after the exam cluster. The midterm is Oct 20 at the earliest, and that date is tentative.
+- Added a Mon Oct 12 HW4 target, because Tue Oct 13 is a class day that also carries 345 PP2 and 252 HW3.
+- Added a clearly labeled **contingent** plan (Fri Oct 16 - Tue Oct 20) to use **only if** the tentative Oct 20 date is confirmed. **No date was invented or promoted**; the midterm is still **date-NV**.
+- Converted the remaining non-ASCII math symbols to ASCII, to match the Quiz 04 guide's PDF-safe convention.
 
 ## 9. Disclaimer
 

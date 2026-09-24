@@ -2,7 +2,9 @@
 
 ## Start Here
 
-**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite.
+**Guide updated:** 2026-09-24 afternoon (America/Phoenix) -- Start Here rewrite. Reviewed 2026-09-24 evening by Claude Opus 5.5 (see §8c).
+
+> **If you only read one thing:** A4 is due Tue Sep 29 at 3:30 PM, but Tuesday is a class day (9:30-10:45, then 12:30-3:15 back to back). So the **real A4 deadline is Mon Sep 28 night**; 10:45-12:30 Tue is the only backup. Midterm study really starts Wed Sep 30 and peaks with the Sun Oct 4 paper mock.
 
 ### Next scheduled assessment
 
@@ -10,7 +12,7 @@
 |-------|-------|-------|
 | Assessment | CSC 337 Midterm 1 | confirmed item |
 | Date | **Tue Oct 6, 2026** | **confirmed** (D2L syllabus / Midterms calendar) |
-| When | 75 minutes; class period **3:30-4:45 PM if held in class** | date confirmed; in-class clock from syllabus description |
+| When | 75 minutes; class period **3:30-4:45 PM if held in class** | date confirmed; 75 min per inventory (= the class period); in-class clock from the calendar description |
 | Delivery / materials | Closed-book **not** in inventory | **verify** |
 | Coverage | Syllabus weeks 1-7: intro, HTML/CSS, forms, Get & Post, JS, DOM, client/server | **PROVISIONAL -- schedule-based review** |
 | Do not invent | Node, Express, MongoDB, D3 | those are weeks 8+ |
@@ -25,12 +27,12 @@ All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026
 
 1. **Finish A4 first (until Tue Sep 29 3:30 PM)** -- WHY: hard deadline before any midterm deep-dive; skills overlap (forms, JS, sort, counts) but A4 is individual submitted work.
 2. **`337-M1-http` + `337-M1-getpost`** -- WHY: week 1 + week 4; GET vs POST is easy points; slides `02-Browsers-URL-HTTP` and `06-HTML-Forms`.
-3. **`337-M1-html` + `337-M1-css` + `337-M1-layout`** -- WHY: weeks 2 content; box model and specificity are high-miss; slides 03-05.
+3. **`337-M1-html` + `337-M1-css` + `337-M1-layout`** -- WHY: week 2 content; box model and specificity are high-miss; slides 03-05.
 4. **`337-M1-forms` + `337-M1-js`** -- WHY: weeks 3 and 5; already lectured; A4 overlap without copying A4.
 5. **`337-M1-dom` then `337-M1-client-server`** -- WHY: weeks 6-7; study **only after lecture**. Client/server is conceptual only.
 6. **`337-M1-integrate`** -- last, after the mock.
 
-**Confirmed vs schedule-based:** Date and 75-min length confirmed. Scope is **not published**. Slides 02-08 are harvested lecture content. DOM / client-server remain schedule-based until taught.
+**Confirmed vs schedule-based:** Date confirmed; 75-min length per inventory (matches the class period). Scope is **not published**. Slides 02-08 are harvested lecture content. DOM / client-server remain schedule-based until taught.
 
 ### Day-by-day tasks (minutes; no class-block study)
 
@@ -40,21 +42,24 @@ All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026
 | Fri Sep 25 | Anytime | A4 primary. If stuck, 20-min CSS specificity tuples. | Slides 04; P4; GS-337-R1 | 20 + A4 |
 | Sat Sep 26 | Anytime | A4 primary. | -- | A4 |
 | Sun Sep 27 | Anytime | A4 primary; 25-min JS traps if A4 is nearly done. | `337-M1-js`; T1, T3; P8 | 25 + A4 |
-| Mon Sep 28 | Anytime | A4 polish. After A4: HTTP + Get/Post. | `337-M1-http`, `getpost`; P2, P7, R3, R4 | 40 after A4 |
-| Tue Sep 29 | **A4 due 3:30 PM -- submit before class.** No study 9:30-6:15 stack except the A4 hand-in | After 6:15: LIGHT HTTP flash only. | R3, R4 | 15 |
+| Mon Sep 28 | Anytime | A4 polish and **submit tonight** (target). Open the Gradescope page and confirm every file is there (GS-337-E2). After A4: HTTP + Get/Post. | `337-M1-http`, `getpost`; P2, P7, R3, R4 | 40 after A4 |
+| Tue Sep 29 | **A4 due 3:30 PM.** Class stack 9:30-10:45 and 12:30-3:15. Backup window **10:45-12:30** only | If A4 is not in yet, finish and submit in 10:45-12:30. Do not plan on the 3:15-3:30 gap. After 6:15: LIGHT HTTP flash only. | R3, R4 | 15 |
 | Wed Sep 30 | No class | HTTP, URLs, Get & Post. | Slides 02 + 06; ICA-M1; P7 | 50 |
-| Thu Oct 1 | After 252 Test 2 (after 10:45) and outside remaining class blocks | Start HTML/CSS review. | `html`, `css`, `layout`; excerpt layout p.3; P3-P5; ICA-M5 | 50 |
+| Thu Oct 1 | 10:45-12:30 gap after 252 Test 2 | Start HTML/CSS review. | `html`, `css`, `layout`; excerpt layout p.3; P3-P5; ICA-M5 | 50 |
 | Fri Oct 2 | Anytime | Deep HTML + CSS + layout. | Slides 03-05; R1; ICA-M2, M4 | 80 |
 | Sat Oct 3 | Anytime | Forms, JS, and DOM **if week-6 lecture happened**. | `forms`, `js`, `dom`; W1; ICA-M6, M8 | 80 |
-| Sun Oct 4 | Anytime | **45-minute paper mock** (R1-R4, T1-T4, W1-W2), then review. | Sec 4b | 70 |
-| Mon Oct 5 | Anytime; stop by evening | Even rotation; client/server concepts only. | All `337-M1-*`; P9, E1 | 70 |
-| Tue Oct 6 | Before 3:30 PM: calm buffer only. Midterm 3:30-4:45 if in class | No new topics. | -- | 10 |
+| Sun Oct 4 | Anytime | **50-minute paper mock** (R1-R4, T1-T4, W1-W2, plus P5 and ICA-M5 for CSS), then review. | Sec 4b | 75 |
+| Mon Oct 5 | Anytime; stop by evening | Even rotation; client/server concepts only. Redo every mock miss blind. | All `337-M1-*`; P9, E1 | 70 |
+| Tue Oct 6 | Class day. Calm-buffer windows: before 9:30 or 10:45-12:30 **only** (252 / 335 / 345 meet 9:30-10:45 and 12:30-3:15). Midterm 3:30-4:45 if in class | No new topics. | -- | 10 |
+
+**Is this enough time?** Almost 7 hours (about 405 minutes) of focused midterm study (Wed Sep 30 - Mon Oct 5), plus A4, which exercises forms and JS. That is adequate for a 75-minute exam over 7 weeks. The thinnest spot is **JavaScript/DOM**, which gets one deep block (Sat Oct 3). If the Sun mock shows JS misses, give Mon Oct 5 to T1-T5 and W1-W2 instead of an even rotation.
 
 ### Final self-check
 
 - [ ] A4 submitted (Sep 29 3:30 PM) -- process, not content
 - [ ] Blind pass over all 11 section IDs
-- [ ] 45-minute paper mock done
+- [ ] 50-minute paper mock done, and every miss redone blind on Mon Oct 5
+- [ ] Can predict the output of GS-337-T1 and T3 **without running code**, and say why
 - [ ] Specificity tuples and content-box vs border-box from memory
 - [ ] GET vs POST differences without notes
 - [ ] DOM / client-server studied only as lectured
@@ -65,9 +70,9 @@ All times below are **Arizona (MST, UTC-7)**. Combined daily order: `weekly/2026
 
 **Excerpt -- margin vs padding (CSC 337, CSS Layout, page 3)**
 
-![CSC 337 CSS Layout p.3 margin and padding](excerpts/csc337-css-layout-p3-box.png)
+> *Slide image (CSC 337 CSS Layout p.3 margin and padding) is not mirrored in this repo.* It lives on the Munch box at `/home/box/shared/munch/study-guides/csc337/assessments/excerpts/csc337-css-layout-p3-box.png`. The own-words caption below and the original deck page are enough to study from.
 
-In my own words: `width` in the default content-box model is the content only. This rule sets content 70px, padding 50px on every side, and margin 10px on every side, plus a 2px border. Total rendered width = 70 + 2*50 + 2*2 = 174px, then the 10px margins sit outside that. Under `box-sizing: border-box`, the 70px would already include padding and border, so the content would shrink.
+In my own words: `width` in the default content-box model is the content only. This rule sets content 70px, padding 50px on every side, and margin 10px on every side, plus a 2px border. Total rendered width = 70 + 2*50 + 2*2 = 174px, then the 10px margins sit outside that. Under `box-sizing: border-box`, the 70px would have to include padding and border. Here padding + border alone is 104px, which is more than 70px, so the content area collapses to 0 and the box renders **104px** wide, not 70px. Border-box only "shrinks the content" when width is larger than padding + border (see P5: 100px leaves 78px of content).
 
 Original deck: `/home/box/shared/munch/study-guides/_meta/d2l-harvest/csc337/content-05-CSS-Layout.pdf` (D2L slide `05-CSS-Layout`), page 3. Personal study channel only.
 
@@ -244,7 +249,7 @@ POST is **not** encryption. Only HTTPS protects the data in transit.
 
 **Where this format comes from.** The Gradescope format notes show short ICA checks (10 points each) and multi-page assignments graded per page (Assignment 3: four rubric questions x 25 points, shown as Page 1–4). They do **not** show a midterm format, which is unpublished. The mix below (recall, trace, write code, short explain) is a generic 75-minute written-exam shape. Treat it as a recommendation, not a claimed format.
 
-**Timed mock (Sun Oct 4):** do R1–R4, T1–T4, and W1–W2 in **45 minutes**, on paper, closed-book.
+**Timed mock (Sun Oct 4):** do R1–R4, T1–T4, W1–W2, plus core P5 (box model) and ICA-M5 (write a CSS rule) in **50 minutes**, on paper, closed-book. The two CSS items make sure the mock covers HTML/CSS as well as JS.
 
 ### Short recall (ICA grain)
 
@@ -321,7 +326,21 @@ The format notes show every submitted ICA earned full credit, but two ICAs had *
 
 **ICA-M3 (forms; ICA3 grain).** Gender (one choice) vs hobbies (many choices): radio or checkbox for each?
 
-**ICA-M4 (CSS selectors; ICA5 grain).** Given elements with ids `taylor`, `martin`, `pearl`, `gretsch` and classes `guitar` / `drums`, which rule set colors **all** of them (not just some)? Sketch a correct rule set.
+**ICA-M4 (CSS selectors; ICA5 grain).** The page has:
+
+```html
+<p id="taylor"  class="guitar">Taylor</p>
+<p id="martin"  class="guitar">Martin</p>
+<p id="pearl"   class="drums">Pearl</p>
+<p id="gretsch" class="drums">Gretsch</p>
+```
+
+Which rule set colors **all four** paragraphs? Explain why each of the others fails.
+
+- (a) `.guitar { color: green; }  #drums { color: blue; }`
+- (b) `.guitar { color: green; }  .drums { color: blue; }`
+- (c) `#taylor, .drums { color: red; }`
+- (d) `p.guitar, #pearl { color: red; }`
 
 **ICA-M5 (box model; ICA6 grain).** Write a rule for `div.box` with margin 10px top/bottom and 15px left/right; border 2px solid black; padding 5px top/bottom and 10px left/right.
 
@@ -414,7 +433,10 @@ The trap: the default `sort()` compares strings, so it gives `[100, 12, 3]`.
 
 **ICA-M3.** (a) radio (one of a group). (b) checkbox (multi-select).
 
-**ICA-M4.** Need rules that hit every element — e.g. `.guitar { color: green; } #pearl { color: blue; } #gretsch { color: yellow; }` (or one rule per id). A lone `.guitar` plus `#drums` fails (no id `drums`; class is `drums`).
+**ICA-M4.** **(b)** colors all four. The others fail:
+- (a) `#drums` looks for an element whose **id** is `drums`. There is none, because `drums` is a **class**. Pearl and Gretsch stay uncolored.
+- (c) It misses Martin, since only `#taylor` is picked from the guitars.
+- (d) It misses Gretsch.
 
 **ICA-M5.**
 ```css
@@ -484,7 +506,7 @@ function validZip(s) {
 
 A loop that checks `s.length === 5` and that every character is between `'0'` and `'9'` is also fine.
 
-**GS-337-E1.** **7 guesses.** Each guess halves the remaining range, and 2^6 = 64 < 100 <= 128 = 2^7.
+**GS-337-E1.** **7 guesses.** Each guess splits the remaining range around the middle. With k guesses you can distinguish at most 2^k - 1 numbers. 2^6 - 1 = 63 < 100, so 6 guesses are not enough, while 2^7 - 1 = 127 >= 100, so 7 always are.
 
 **GS-337-E2.** (1) Upload **every** required file, with filenames exactly as the assignment PDF lists them. (2) Open the submission page afterwards to confirm all files are there. Also check the deadline: assignments are due at **3:30 PM**, not 11:59 PM.
 
@@ -501,7 +523,7 @@ A loop that checks `s.length === 5` and that every character is between `'0'` an
 - `addEventListener("click", f())`, which calls `f` immediately.
 - Using `innerHTML` with user text.
 
-**Readiness:** a blind pass over all **11** section IDs, the 45-minute paper mock (§4b), and a light review on Monday night — no cram.
+**Readiness:** a blind pass over all **11** section IDs, the 50-minute paper mock (§4b), and a light review on Monday night — no cram.
 
 ---
 
@@ -511,13 +533,14 @@ A loop that checks `s.length === 5` and that every character is between `'0'` an
 
 | Day | Focus | IDs | Notes |
 |-----|-------|-----|-------|
-| Tue Sep 29 | — | — | A4 due 3:30 PM. This guide does not cover A4. |
+| Mon Sep 28 | — | — | Submit A4 tonight (target). This guide does not cover A4. |
+| Tue Sep 29 | — | — | A4 due 3:30 PM; backup window 10:45-12:30 only. |
 | Wed Sep 30 | HTTP, URLs, Get & Post | http, getpost | Short |
 | Fri Oct 2 | HTML and CSS review | html, css, layout | Deep day |
 | Sat Oct 3 | Forms, JS, and DOM (after the week-6 lecture) | forms, js, dom | Deep day |
-| Sun Oct 4 | **45-minute paper mock** (§4b), then review | integrate | Blind, then check |
+| Sun Oct 4 | **50-minute paper mock** (§4b), then review | integrate | Blind, then check |
 | Mon Oct 5 | Even rotation over all IDs; client/server concepts | all `337-M1-*` | Deep day, but stop by evening |
-| **Tue Oct 6** | Calm buffer only | — | Midterm in class at 3:30 PM |
+| **Tue Oct 6** | Calm buffer only (before 9:30 or 10:45-12:30) | — | Midterm in class at 3:30 PM (if held in class) |
 
 ---
 
@@ -537,6 +560,16 @@ A loop that checks `s.length === 5` and that every character is between `'0'` an
 - Mapped Content slides 02-08 onto the existing topic IDs; kept honesty banners (scope PROVISIONAL; date confirmed Oct 6).
 - Added ICA-style micro practice ICA-M1..M8 (**Practice recommendation**) from Content ICA grain without copying ICA PDFs.
 - Added A1-A3 practice-context table (skills only); A4 still open/individual, no solutions.
+
+## 8c. Opus 5.5 review (2026-09-24 evening, America/Phoenix)
+
+- Re-checked every key. JS outputs (T1-T5, W2, the `Number`/`parseInt` claims) were run in Node and match. **No wrong answers found.**
+- **ICA-M4 was underspecified.** Its key depended on which ids had which class, and the question never said. It is now a concrete four-option question with an unambiguous answer.
+- **Fixed the border-box claim** in the excerpt caption. With 70px width and 104px of padding + border, border-box collapses the content to 0 and renders 104px; it does not simply "shrink".
+- Tightened the GS-337-E1 justification (2^k - 1 numbers with k guesses).
+- **Class-block fixes:** the A4 hand-in was planned "before class" on Tue Sep 29, but 9:30-3:15 is almost all class. It is now a Mon Sep 28 night target with a 10:45-12:30 backup. The Tue Oct 6 buffer now names the only free windows (before 9:30 or 10:45-12:30).
+- The mock grew from 45 to 50 minutes and added P5 + ICA-M5, so HTML/CSS is tested too, not only JS.
+- The 75-minute length is now labeled "per inventory". The verified facts sheet only states the 3:30-4:45 class period.
 
 ## 9. Disclaimer
 
