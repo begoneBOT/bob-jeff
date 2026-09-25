@@ -35,33 +35,37 @@ END = date(2026, 10, 8)
 
 # (number, name, when) for the banner, soonest first.
 PDF_ORDER = [
-    (1, "345 HW2 \u2192 345 Exam1", "late \u2264 Sat 9/26 2p"),
-    (2, "337 A4 \u2192 337 MT1", "A4 Tue 9/29 3:30p"),
-    (3, "252 HW2 \u00b7 380 HW03", "Tue 9/29 \u2192 then 252 Test2 / 380 Quiz04"),
-    (4, "252 Test2", "Thu 10/1"),
-    (5, "337 MT1", "Tue 10/6"),
-    (6, "335 MT \u2192 345 Exam1", "both Thu 10/8"),
-    (7, "380 Quiz04", "due NV \u00b7 in gaps"),
-    (8, "252 Test3 \u00b7 380 MT", "10/15 \u00b7 ~10/20 NV \u00b7 LIGHT"),
+    (1, "345 Exam1", "after HW2 (late \u2264 Sat 9/26 2p)"),
+    (2, "337 Midterm1", "after A4 (A4 Tue 9/29 3:30p)"),
+    (3, "252 Test2", "Thu 10/1"),
+    (4, "380 Quiz04", "due NV \u00b7 in gaps"),
+    (5, "335 Midterm", "Thu 10/8 (then 345 Exam1)"),
+    (6, "252 Test3", "Thu 10/15 \u00b7 LIGHT"),
+    (7, "380 Mid", "~Tue 10/20 NV \u00b7 LIGHT"),
+    (8, "Weekly overview", "last"),
 ]
 
 # Per day: switch order of class/PDF short names. Prefix "*" = exam that day, "~" = light.
+# A (time, name) tuple is a Study Sessions calendar block (Arizona time).
 PLAN = {
-    date(2026, 9, 24): ["345 HW2", "252 Test2"],
-    date(2026, 9, 25): ["345 HW2", "252 Test2", "380 Quiz04"],
-    date(2026, 9, 26): ["345 HW2", "337 A4", "252 Test2"],
+    date(2026, 9, 24): [("7\u20139p", "252 Test2")],
+    date(2026, 9, 25): [("8:30", "345 Exam1"), ("10:00", "252 Test2"), ("12:00", "337 Mid1/A4"),
+                        ("2:00", "252 Test2"), ("4:30", "335 Mid"), ("6:00", "345 Exam1"),
+                        ("7:00", "380 Quiz04"), ("8:30", "252 Test2")],
+    date(2026, 9, 26): [("8:00", "345 HW2/Exam1"), ("10:00", "252"), ("1:00", "337 A4"),
+                        ("3:00", "252 Test2"), ("4:30", "335"), ("7:00", "380")],
     date(2026, 9, 27): ["337 A4", "252 HW2", "380 HW03"],
     date(2026, 9, 28): ["252 Test2", "337 A4", "252 HW2"],
     date(2026, 9, 29): ["380 HW03", "~252 Test2"],
-    date(2026, 9, 30): ["252 Test2", "337 MT1", "380 Quiz04"],
-    date(2026, 10, 1): ["*252 Test2", "337 MT1"],
-    date(2026, 10, 2): ["337 MT1", "335 MT", "345 Exam1"],
-    date(2026, 10, 3): ["337 MT1", "335 MT", "345 Exam1"],
-    date(2026, 10, 4): ["337 MT1", "335 MT", "345 Exam1"],
-    date(2026, 10, 5): ["337 MT1", "335 MT", "345 Exam1"],
-    date(2026, 10, 6): ["*337 MT1", "~335 MT", "~345 Exam1"],
-    date(2026, 10, 7): ["~335 MT", "~345 Exam1"],
-    date(2026, 10, 8): ["*335 MT", "*345 Exam1"],
+    date(2026, 9, 30): ["252 Test2", "337 Mid1", "380 Quiz04"],
+    date(2026, 10, 1): ["*252 Test2", "337 Mid1"],
+    date(2026, 10, 2): ["337 Mid1", "335 Mid", "345 Exam1"],
+    date(2026, 10, 3): ["337 Mid1", "335 Mid", "345 Exam1"],
+    date(2026, 10, 4): ["337 Mid1", "335 Mid", "345 Exam1"],
+    date(2026, 10, 5): ["337 Mid1", "335 Mid", "345 Exam1"],
+    date(2026, 10, 6): ["*337 Mid1", "~335 Mid", "~345 Exam1"],
+    date(2026, 10, 7): ["~335 Mid", "~345 Exam1"],
+    date(2026, 10, 8): ["*335 Mid", "*345 Exam1"],
 }
 
 DUE = {
@@ -73,11 +77,11 @@ DUE = {
 }
 
 AFTER = {
-    date(2026, 10, 9): ["~380 MT"],
+    date(2026, 10, 9): ["~380 Mid"],
     date(2026, 10, 10): ["~252 Test3"],
 }
 
-W, H = 2240, 2080
+W, H = 2240, 2200
 COLS = 7
 MARGIN = 36
 BANNER_Y = 180
@@ -109,6 +113,8 @@ def color_of(name):
 
 
 def draw_step(d, x, y, w, n, raw, h=56):
+    if isinstance(raw, tuple):
+        return draw_timed(d, x, y, w, *raw)
     exam = raw.startswith("*")
     light = raw.startswith("~")
     name = raw.lstrip("*~")
@@ -127,6 +133,17 @@ def draw_step(d, x, y, w, n, raw, h=56):
         d.rounded_rectangle([cx, y, cx + cw, y + h], radius=10, fill=col)
         text, fg = name, "#000000"
     d.text((cx + 12, y + h / 2), text, font=fit_font(d, text, cw - 22, 32, min_size=20), fill=fg, anchor="lm")
+    return h
+
+
+def draw_timed(d, x, y, w, when, name, h=42):
+    tf = fit_font(d, when, 62, 21, min_size=15)
+    d.text((x + 64, y + h / 2), when, font=tf, fill=WHITE, anchor="rm")
+    cx = x + 72
+    cw = w - 72
+    d.rounded_rectangle([cx, y, cx + cw, y + h], radius=9, fill=color_of(name))
+    d.text((cx + 10, y + h / 2), name, font=fit_font(d, name, cw - 18, 26, min_size=18),
+           fill="#000000", anchor="lm")
     return h
 
 
@@ -194,8 +211,9 @@ def main(out):
 
             steps = PLAN.get(day) or AFTER.get(day) or []
             cy = y + (114 if day == START else 96 if class_day else 68)
+            timed = any(isinstance(s, tuple) for s in steps)
             for n, raw in enumerate(steps, 1):
-                cy += draw_step(d, x + 14, cy, CELL_W - 28, n, raw) + 12
+                cy += draw_step(d, x + 14, cy, CELL_W - 28, n, raw) + (7 if timed else 12)
 
             dues = DUE.get(day, [])
             dy = y + CELL_H - 20 - 32 * len(dues)
@@ -228,8 +246,8 @@ def main(out):
         lx += w + 14
 
     notes = [
-        "Homework first, then that course's guide PDF.  337 MT1 PDF only after A4 is in.  252 Test2 / 380 Quiz04 PDFs after 252 HW2 / 380 HW03.",
-        "NV = not verified: exam clocks (252 Test2, 335 MT, 345 Exam1), 380 Quiz04 due, 380 MT date (~Tue Oct 20).  Later LIGHT: 252 Test3 Thu Oct 15.",
+        "Homework first, then that course's guide PDF.  337 Mid1 PDF only after A4 is in.  Weekly overview goes last.  Later LIGHT: 252 Test3 Thu Oct 15.",
+        "Thu\u2013Sat times = Study Sessions calendar blocks.  NV = not verified: exam clocks (252 Test2, 335 Mid, 345 Exam1), 380 Quiz04 due, 380 Mid date (~Tue Oct 20).",
     ]
     ny = fy + 60
     for n in notes:
